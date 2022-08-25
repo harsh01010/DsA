@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+ bool solve(vector<int>arr , int n , int k , int s){
+          int tempsum = 0;
+            for(int i=0;i<k;i++){ 
+               tempsum += arr[i];
+            }
+         if(tempsum==s) return true;
+          for(int i=k;i<n;i++){
+             tempsum+=(arr[i] - arr[i-k]);
+              if(tempsum == s) return true;
+          }
+           return false;
+
+ }
+
+int main()
+{
+
+     // given k and sum check whether , it exists or not using sliding window
+        int  n , k ,s;
+          cout<<"enter the value of n , k , s\n";
+           cin>>n>>k>>s;
+              vector<int>arr;
+               cout<<"enter the elements of the array\n";
+                for(int i=0;i<n;i++){
+                   int ele;
+                     cin>>ele;
+                      arr.push_back(ele);
+                }
+                if( solve(arr , n , k , s))
+                 cout<<"yes\n";
+                else cout<<"no\n";
+
+
+return 0;
+}
