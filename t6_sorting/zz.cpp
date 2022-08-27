@@ -2,40 +2,45 @@
 #define ll long long
 using namespace std;
 
-void mergeArr(int *arr,int l ,int h,int mid)
+void mergeArr(int arr[],int l,int m,int h)
 {
-    int n1 = mid-l+1;
-    int n2 = h-mid;
-    int aux1[n1] , aux2[n2];
-    int n = h+1;
-    int p = 0 , q=0,k=0;
-    for(int i=l;i<=mid;i++) aux1[p++] = arr[i];
-    for(int i = mid+1;i<=h;i++)aux2[q++] = arr[i];
+    int n1 = m-l+1,n2=h-m;
+    int a[n1] , b[n2];
+    for(int i=0;i<n1;i++)a[i]=arr[i+l];
+    for(int i=0;i<n2;i++) b[i] = arr[m+1+i];
 
-    p=0,q=0;
-     while(p< h+1 && q< h+1)
-     {
-          if(aux1[p] < aux2[q]) arr[k++] = aux1[p++];
-          else arr[k++] = aux2[q++];
-
-     }
-     while(p<h+1) arr[k++] = aux1[p++];
-     while(q<h+1) arr[k++] = aux2[q++];
+    int p=0,q=0,r=l;
+    while(p<n1 && q<n2)
+    {
+        if(a[p]<b[q]) arr[r++] = a[p++];
+        else arr[r++] = b[q++];
+    }
+    while(p<n1) arr[r++] = a[p++];
+    while(q<n2) arr[r++] = b[q++];
 }
+
+void mergeSort(int arr[],int l,int h)
+{
+    if(l<h){
+        int m = (l+h)/2;
+        mergeSort(arr,l,m);
+        mergeSort(arr,m+1,h);
+        mergeArr(arr,l,m,h);
+    }
+}
+
 int main()
 {
 
-      int n;
-        cin>>n;
-         int arr[n];
-       for(int i=0;i<n;i++) cin>>arr[i];
-      // for(int i=0;i<n;i++) cout<<arr[i]<<" ";
-      int l, h;
-        cin>>l>>h;
-          int mid;
-          cin>>mid;
-        mergeArr( arr,l , h, mid);
-        for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+    int n;
+     cin>>n;
+      int arr[n];
+      for(int i=0;i<n;i++) cin>>arr[i];
+      int l=0,h=n-1;
+      mergeSort(arr,l,h);
+
+      for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+
 
 
 
