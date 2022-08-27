@@ -1,47 +1,48 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 using namespace std;
 
-
-void mergearr(int arr[] , int n , int mid)  // implement for low and high rather than assuming low as zero.
+void mergeArr(int *arr, int l, int h, int mid)
 {
-      int n1 = mid +1;
-      int n2 = n-mid-1;
-      int aux1[n1] , aux2[n2];
-      int j=0;
-      for(int i=0;i<n1;i++)
-      aux1[i] = arr[j++];
-      for(int i=0;i<n2;i++)
-      aux2[i] = arr[j++];
+      int n1 = mid - l + 1;
+      int n2 = h - mid;
+      int aux1[n1], aux2[n2];
+      int n = h + 1;
+      int p = 0, q = 0, k = 0;
+      for (int i = l; i <= mid; i++)
+            aux1[p++] = arr[i];
+      for (int i = mid + 1; i <= h; i++)
+            aux2[q++] = arr[i];
 
-      int ind1=0,ind2=0,ind=0;
-      while(ind1 <n1 and ind2<n2)
+      p = 0, q = 0;
+      while (p < h + 1 && q < h + 1)
       {
-         if(aux1[ind1]<aux2[ind2]) arr[ind++] = aux1[ind1++];
-         else arr[ind++] = aux2[ind2++];
+            if (aux1[p] < aux2[q])
+                  arr[k++] = aux1[p++];
+            else
+                  arr[k++] = aux2[q++];
       }
-      while(ind1<n1)
-         arr[ind++] =aux1[ind1++];
-         while(ind2<n2) arr[ind++] = aux2[ind2++];
-
-       
-     
+      while (p < h + 1)
+            arr[k++] = aux1[p++];
+      while (q < h + 1)
+            arr[k++] = aux2[q++];
 }
 int main()
 {
 
       int n;
-        cout<<"enter total number of elements in the array\n";
-         cin>>n;
-         int arr[n];
-         for(auto &it:arr) cin>>it;
-         int mid; cin>>mid;  // upto mid left part is sorted and after that right part is sorted
-      
-       mergearr(arr,n,mid);
-      for(auto it:arr) cout<<it<<" ";
-         
+      cin >> n;
+      int arr[n];
+      for (int i = 0; i < n; i++)
+            cin >> arr[i];
 
+      int l, h;
+      cin >> l >> h;
+      int mid;
+      cin >> mid;
+      mergeArr(arr, l, h, mid);
+      for (int i = 0; i < n; i++)
+            cout << arr[i] << " ";
 
-
-return 0;
+      return 0;
 }
