@@ -1,21 +1,33 @@
-#include <iostream>
+#include<bits/stdc++.h>
+#define ll long long
 using namespace std;
-#define ll long long 
 
-int main() {
-	// your code goes here
-	ll t;
-	  cin>>t;
-	    while(t--)
-	    {
-	          ll a,b,p,q;
-	           if(p%a != 0 or q%b !=0) cout<<"NO\n";
-	           else {
-	           ll x = p/a , y = q/b;
-	           
-	           if(x==y or abs(x-y)==1) cout<<"YES\n";
-	           else cout<<"NO\n";
-	           }
-	    }
-	return 0;
+int main()
+{
+	  int t;
+	    cin>>t;
+		  while(t--)
+		  {
+     int n;
+	   cin>>n;
+	     int arr[n];
+		 for(auto &it:arr) cin>>it;
+
+		 vector<int>ans;
+		 for(int i=0;i<n-1;i++)
+		  {
+			  if(arr[i] > arr[i+1])
+			   continue;
+			   else ans.push_back(arr[i]);
+		  }
+		  if(arr[n-2] <= arr[n-1]) ans.push_back(arr[n-1]);
+		  cout<<ans.size()<<" ";
+		  for(int i=0;i<ans.size();i++) cout<<ans[i]<<" ";
+		  cout<<"\n";
+}
+	
+
+
+
+return 0;
 }
