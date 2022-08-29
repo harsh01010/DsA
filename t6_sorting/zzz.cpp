@@ -1,76 +1,75 @@
-
 #include<bits/stdc++.h>
 #define ll long long
 using namespace std;
 
-void bubbleSort(int arr[],int n)
+
+ ll lower_bound(vector<ll> &v, ll ele)
 {
-       for(int i=0;i<n-1;i++)
-       {
-          bool swapped = false;
-           for(int j=0;j<n-i-1;j++){
-              if(arr[j]>arr[j+1]){
-                 swap(arr[j],arr[j+1]);
-                  swapped = true;
-              }
-           }
-           if(!swapped) return;
-       }
+	ll lo = 0;
+	ll hi = v.size() - 1;
+	while (hi - lo > 1)
+	{
+		ll mid = (lo + hi) / 2;
+		if (v[mid] <= ele)
+		{
+			lo = mid + 1;
+		}
+		else
+		{
+			hi = mid;
+		}
+	}
+	if (v[lo] > ele)
+	{
+		return lo;
+	}
+	if (v[hi] > ele)
+	{
+		return hi;
+	}
+	return -1;
 }
 
-void selectionSort(int arr[],int n)
+ll func(vector<ll>&arr,ll lo,ll hi,ll ele)
 {
-   for(int i=0;i<n;i++)
-     {
-          int minind = i;
-           for(int j=i;j<n;j++)
-            {
-                 if(arr[minind]>arr[j]) minind =  j;
-            }
-            swap(arr[minind],arr[i]);
-     }
+	   ll ans=-1 , n = hi;
+	    while(lo<=hi)
+		{
+			  ll mid = (lo+hi)/2;
+			  if(arr[mid] < ele) lo = mid+1;
+			  else if(arr[mid] == ele)
+			  {
+				 if( mid <n-1 and arr[mid+1] == ele ){ ans = mid+1; lo = mid+1;}
+				  else if(mid==n) return -1;
+				  else return mid+1; 
+			  }
+			  else if(arr[mid] > ele)
+			  {
+				   if(mid < n-1 and arr[mid+1]==arr[mid]){ ans = mid; lo = mid+1;}
+				   else if(mid > 0 and arr[mid-1]>ele){ ans = mid; hi = mid-1;}
+				   else return mid;
+			  }
+		}
+		return ans;
 }
-
-void insertionSort(int arr[],int n){
-        for(int i=1;i<n;i++){
-              int key = arr[i];
-              int j = i-1;
-                 while(j>=0 and arr[j]>key)
-                 {
-                    arr[j+1] = arr[j];
-                      j--;
-                 }
-                 arr[j+1] = key; 
-        }
-}
-
-
 int main()
 {
-         int t;
-         cout<<"enter total number of testcases\n";
-           cin>>t;
-            
-            while(t--)
-            {   cout<<"enter total number of elements in the array\n";
-                  int n;
-                    cin>>n;
-                    int arr[n];
-                    cout<<"enter the elements of the array\n";
-                    for(auto &it:arr) cin>>it;
-                  cout<<"choose any optiion:\n1.bubble sort,\n2.selection sort,\n3.insertion sort\n";
-                  int ch;
-                  cin>>ch;
-                  if(ch==1)
-                    bubbleSort(arr,n);
-                 else if(ch==2)
-                  selectionSort(arr,n);
-                  else if(ch==3)
-                    insertionSort(arr,n);
-                    for(auto it:arr) cout<<it<<" ";
-                    cout<<"\n";
-                    
-            }
+
+   ll n;
+     cin>>n;
+       vector<ll>arr;
+       for(ll i=0;i<n;i++)
+        {
+           ll ele;
+             cin>>ele;
+              arr.push_back(ele);
+        }
+        int ele;
+          cin>>ele;
+         cout<<lower_bound(arr,ele);
+         cout<<func(arr,0,arr.size()-1,ele);
+
+   
 
 
 
