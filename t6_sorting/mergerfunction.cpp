@@ -15,16 +15,16 @@ void mergeArr(int *arr, int l, int h, int mid)
             aux2[q++] = arr[i];
 
       p = 0, q = 0;
-      while (p < h + 1 && q < h + 1)
+      while (p <n1 && q < n2)
       {
             if (aux1[p] < aux2[q])
                   arr[k++] = aux1[p++];
             else
                   arr[k++] = aux2[q++];
       }
-      while (p < h + 1)
+      while (p < n1)
             arr[k++] = aux1[p++];
-      while (q < h + 1)
+      while (q < n2)
             arr[k++] = aux2[q++];
 }
 int main()
