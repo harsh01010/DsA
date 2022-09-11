@@ -4,7 +4,7 @@
  #include<bits/stdc++.h>
 typedef long long int ll;
 using namespace std;
-// three way partiton , or partition three pivots
+// three way partition , or partition around three pivots
 void dutchNationalFlag(int arr[],int n,int p1,int p2,int p3)
 {
        int lo = 0 , hi = n-1 , mid = 0;
