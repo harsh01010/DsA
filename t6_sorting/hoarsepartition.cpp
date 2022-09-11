@@ -10,7 +10,7 @@ void print(int arr[],int lo,int hi)
 }
 int hoarse(int arr[],int lo,int hi)
   {
-       int i = lo-1 , j = hi-1,pivot = arr[lo];
+       int i = lo-1 , j = hi+1,pivot = arr[lo];
         while(1)
         {
               do{
