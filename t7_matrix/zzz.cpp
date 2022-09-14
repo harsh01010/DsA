@@ -1,130 +1,111 @@
-#include <stdio.h>
+#include<bits/stdc++.h>
+typedef long long int ll;
+using namespace std;
 
-int hoarse(int arr[], int lo, int hi)
-{
-    int pivot = arr[lo];
-    int i = lo - 1;
-    int j = hi + 1;
-    while (1)
-    {
-        do
-        {
-            i++;
-        } while (arr[i] < pivot);
-        do
-        {
-            j--;
-        } while (arr[j] > pivot);
-        if (i >= j)
-            return j;
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+
+  void pat1(void)
+  {
+      for(int i=1;i<=4;i++)
+      {   int p = i;
+           for(int j=1;j<=i;j++)
+           {
+              cout<<p++<<" ";
+           }
+           cout<<"\n";
+      }
+  }
+
+void pat2(void)
+{  int x = 0;
+    for(int i=1;i<=4;i++)
+    {    int p = i;
+
+          for(int j=1;j<=7;j++)
+          {
+                if(j>=(5-i) and j<=(3+i))
+                {
+                      if(i%2 == j%2) cout<<" ";
+                      else cout<<p++<<" ";
+                }
+                else cout<<" ";
+          }
+          cout<<"\n";
+          
+          
     }
 }
-
-void qsortt(int arr[], int lo, int hi)
+void pat3(void)
 {
-    if (lo < hi)
-    {
-        int prt = hoarse(arr, lo, hi);
-        qsortt(arr, lo, prt);
-        qsortt(arr, prt + 1, hi);
-    }
+     for(char i = 'A';i<='C';i++)
+     {
+           for( char j = 'A';j<=i;j++)
+           {
+              cout<<i<<" ";
+           }
+           cout<<"\n";
+     }
+     
 }
-
-void unionn(void)
+void pat4(void)
 {
-    int n1, n2;
-    scanf("%d%d", &n1, &n2);
-    int arr[n1], brr[n2];
-    printf("enter the elements of both the  arrays\n");
+      for(char i = 'A';i<='D';i++)
+      {   char t = i;
 
-    for (int i = 0; i < n1; i++)
-        scanf("%d", &arr[i]);
-    for (int i = 0; i < n2; i++)
-        scanf("%d", &brr[i]);
-
-    qsortt(arr, 0, n1 - 1), qsortt(brr, 0, n2 - 1);
-
-    int k = 0, i = 0, j = 0, ans[n1 + n2];
-    while (i < n1 and j < n2)
-
-    {
-        if (i > 0 and arr[i] <= brr[j] and arr[i] == arr[i - 1])
-            i++;
-        else if (j > 0 and brr[j] < arr[i] and brr[j] == brr[j - 1])
-            j++;
-        else if (arr[i] > brr[j])
-            ans[k++] = brr[j++];
-        else if (arr[i] < brr[j])
-            ans[k++] = arr[i++];
-        else if (arr[i] == brr[j])
-            ans[k++] = arr[i++], j++;
-    }
-    while (i < n1)
-    {
-        if (i > 0 and arr[i] == arr[i - 1])
-            i++;
-        else
-            ans[k++] = arr[i++];
-    }
-    while (j < n2)
-    {
-        if (j > 0 and brr[j] == brr[j - 1])
-            j++;
-        else
-            ans[k++] = brr[j++];
-    }
-    printf("UNION:-\n:");
-    for (int i = 0; i < k; i++)
-        printf("%d ", ans[i]);
-    printf("\n");
+          for(char j = 'A';j<=i;j++)
+          {
+             cout<<t++<<" ";
+          }
+          cout<<"\n";
+      }
 }
-
-void intersect(void)
+void pat5(void)
 {
-    int n1, n2;
-    scanf("%d%d", &n1, &n2);
-    int arr[n1], brr[n2];
-
-    printf("enter the elements of  the array\n");
-    for (int i = 0; i < n1; i++)
-        scanf("%d", &arr[i]);
-    for (int i = 0; i < n2; i++)
-        scanf("%d", &brr[i]);
-
-    qsortt(arr, 0, n1 - 1);
-    qsortt(brr, 0, n2 - 1);
-
-    int inter[n1 + n2];
-    int i = 0, j = 0, k = 0;
-    while (i < n1 and j < n2)
-    {
-        if (arr[i] < brr[j])
-            i++;
-        else if (arr[i] > brr[j])
-            j++;
-        else
-            inter[k++] = arr[i++], j++;
-    }
-    if (k == 0)
-        printf("null\n");
-    else
-    {
-        for (int i = 0; i < k; i++)
-            printf("%d ", inter[i]);
-    }
+      char ul = 'E';
+     for(int i=1;i<=5;i++)
+      {    char p = ul;
+          for(int j=1;j<=i;j++)
+          {
+                cout<<p++<<" ";
+          }
+          ul--;
+          cout<<"\n";
+      }
+   
+}
+void pat6(void)
+{
+     for(int i=1;i<=4;i++)
+     {   int t = i;
+         bool flag = false;
+          for(int j=1;j<=7;j++)
+          { 
+              if(j>=(5-i) and j<=(3+i))
+              {
+                  if(j<=4)
+                     cout<<t++<<"";
+                     else{ if(!flag){t--;flag=true;}cout<<--t<<"";}
+              }
+              else cout<<" ";
+             
+          }
+          cout<<"\n";
+     }
 }
 int main()
 {
-    int t;
-    scanf("%d", &t);
-    while (t--)
-    {
-        // unionn();
-        intersect();
-    }
+    #ifndef ONLINE_JUDGE
+    freopen("i_p.txt", "r", stdin);
+    freopen("o_p.txt", "w", stdout);
+    #endif
 
-    return 0;
+       
+//    pat1(); cout<<"\n";
+//    pat2(); cout<<"\n";
+//    pat3(); cout<<"\n";
+//    pat4(); cout<<"\n";
+//    pat5(); cout<<"\n";
+//    pat6(); cout<<"\n";
+
+
+return 0;
 }
