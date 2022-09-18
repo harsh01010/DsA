@@ -10,26 +10,29 @@ int median(vector<vector<int>>arr)
       int r2 = arr[0][0];
       for(int i=0;i<row;i++)
        {r1 = min(r1 , arr[i][0]);
-         r2 = max(r2 , arr[i][clm-1]);
+         r2 = max(r2 , arr[i][clm-1]);         // our search space will be r1 to r2
        }
       // cout<<r1<<" "<<r2<<"\n";
 
-       int ansInd = (row*clm - 1)/2;   // row*clm - (row*clm+1)/2;
+       int ansInd = (row*clm - 1)/2;   // row*clm - (row*clm+1)/2;  // * assuming only total odd number of elements
+        // ansInd will tell how many elements will be greate than our median
       // cout<<ansInd<<"\n";
-        while(r1 < r2)
+        while(r1 <= r2)
         {
               int mid = (r1+r2) / 2;
             int u_B = 0;
               for(int i=0;i<row;i++)
               {
-                 u_B +=(clm   - (upper_bound(arr[i].begin() , arr[i].end() , mid)  - arr[i].begin()));
+                 u_B +=(clm   - (upper_bound(arr[i].begin() , arr[i].end() , mid)  - arr[i].begin())); // tracking greater elements
+
               }
             //  cout<<u_B<<"\n";
             
-             if(u_B > ansInd) r1 = mid+1;
-              else r2 = mid;
+              if(u_B == ansInd) return mid;
+              else if(u_B > ansInd) r1 = mid+1;
+              else r2 = mid-1;
         }
-        return r1;
+        return -1;
       
 }
 

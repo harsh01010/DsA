@@ -35,3 +35,15 @@ int main()
 
 	return 0;
 }
+
+
+/*
+
+  
+       int arr[] = {1,2,3,4};
+
+        int ub = 5;
+
+        cout<< (upper_bound(arr,arr+4,7) - &arr[0]);   //predefined function
+  
+		*/
