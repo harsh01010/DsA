@@ -99,7 +99,7 @@ Now suppose you have written some code or edited a previous file in this your di
 
 then use add , and commit (i have discussed these command above) and check the status.
 
-after that push the changes on github using following command:
+after that push the changes on github using following command:(make sure you are connected to internet)
  
     git push origin master
 
