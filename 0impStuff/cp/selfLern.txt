@@ -1,0 +1,172 @@
+    
+    2 To 3 *
+   
+   SORTING
+
+    https://www.codechef.com/LP2TO302/problems/SMPAIR
+
+    https://www.codechef.com/LP2TO302/problems/TACHSTCK
+
+    https://www.codechef.com/LP2TO302/problems/SRTCHK
+
+    https://www.codechef.com/LP2TO302/problems/DIV03
+
+    https://www.codechef.com/LP2TO302/problems/CNTSORT
+    
+    https://www.codechef.com/LP2TO302/problems/MIXCOLOR
+
+    https://www.codechef.com/LP2TO302/problems/CM164364
+
+    https://www.codechef.com/LP2TO302/problems/SUBS
+
+    https://www.codechef.com/LP2TO302/problems/PTMSSNG
+
+    https://www.codechef.com/LP2TO302/problems/CNTDIST
+
+    https://www.codechef.com/LP2TO302/problems/MEX
+
+    https://www.codechef.com/LP2TO302/problems/EQDIFFER
+
+    https://www.codechef.com/LP2TO302/problems/JAVELIN
+
+    https://www.codechef.com/LP2TO302/problems/BOOKCHEF
+
+    https://www.codechef.com/LP2TO302/problems/REMONE
+
+    https://www.codechef.com/LP2TO302/problems/PSORT3
+
+    https://www.codechef.com/LP2TO302/problems/SWPSRT1
+
+    https://www.codechef.com/LP2TO302/problems/CHEFRES
+
+    https://www.codechef.com/LP2TO302/problems/ADJSRT
+
+    https://www.codechef.com/LP2TO302/problems/BNSRCH1
+
+    https://www.codechef.com/LP2TO302/problems/QCKSRT2
+
+
+ BINARY SEARCH
+
+   https://www.codechef.com/LP2TO303/problems/AVGFLEX
+
+   https://www.codechef.com/LP2TO303/problems/MINEAT
+
+   https://www.codechef.com/LP2TO303/problems/STACKS
+
+   https://www.codechef.com/LP2TO303/problems/FORESTGA
+
+   https://www.codechef.com/LP2TO303/problems/SHROUTE
+
+   https://www.codechef.com/LP2TO303/problems/SNAKEEAT
+
+   https://www.codechef.com/LP2TO303/problems/SNTEMPLE
+
+   https://www.codechef.com/LP2TO303/problems/SQUIRREL
+
+   https://www.codechef.com/LP2TO303/problems/MODEQ
+
+   https://www.codechef.com/LP2TO303/problems/FLUSHOT
+
+
+ STL 
+  
+   https://www.codechef.com/LP2TO304/problems/SUDBOOKS
+
+   https://www.codechef.com/LP2TO304/problems/ATTND
+
+   https://www.codechef.com/LP2TO304/problems/CHFPLN
+
+   https://www.codechef.com/LP2TO304/problems/VCS
+
+   https://www.codechef.com/LP2TO304/problems/BEX
+
+   https://www.codechef.com/LP2TO304/problems/LOWSUM
+
+   https://www.codechef.com/LP2TO304/problems/IPCTRAIN
+
+   https://www.codechef.com/LP2TO304/problems/COOK82C
+
+   https://www.codechef.com/LP2TO304/problems/CHEFTOWN
+
+   https://www.codechef.com/LP2TO304/problems/FEMA2
+
+BIT MANUPULATION
+
+  https://www.codechef.com/LP2TO305/problems/ADDI
+
+  https://www.codechef.com/LP2TO305/problems/SELINA
+
+  https://www.codechef.com/LP2TO305/problems/CHFNA
+
+  https://www.codechef.com/LP2TO305/problems/XORORED
+
+  https://www.codechef.com/LP2TO305/problems/MAXDMGE
+
+  https://www.codechef.com/LP2TO305/problems/ENGXOR
+
+  https://www.codechef.com/LP2TO305/problems/XXOR
+
+  https://www.codechef.com/LP2TO305/problems/XORSUB
+
+DP
+  
+  https://www.codechef.com/LP2TO306/problems/SUBINC
+
+  https://www.codechef.com/LP2TO306/problems/KPRIME
+
+  https://www.codechef.com/LP2TO306/problems/FROGV
+
+  https://www.codechef.com/LP2TO306/problems/LISDIGIT
+
+  https://www.codechef.com/LP2TO306/problems/GDSUB
+
+  https://www.codechef.com/LP2TO306/problems/MGCRNK
+
+  https://www.codechef.com/LP2TO306/problems/E1
+
+  https://www.codechef.com/LP2TO306/problems/GRGUY
+
+  https://www.codechef.com/LP2TO306/problems/WSTRING
+
+  https://www.codechef.com/LP2TO306/problems/CHEFWED
+
+https://www.codechef.com/LP2TO306/problems/DISHDIS
+
+ https://www.codechef.com/LP2TO306/problems/MAXCROSS
+
+ SEGMENT TREES
+
+ https://www.codechef.com/LP3TO407/problems/WOUT
+
+ https://www.codechef.com/LP3TO407/problems/HMAPPY1
+
+ https://www.codechef.com/LP3TO407/problems/CHFQUEUE
+
+ https://www.codechef.com/LP3TO407/problems/STRQ
+
+ https://www.codechef.com/LP3TO407/problems/SEACO
+
+ https://www.codechef.com/LP3TO407/problems/CHEFSUBA
+
+ https://www.codechef.com/LP3TO407/problems/CSUBQ
+
+ MUDULO MULTIPLICATIVE INVERSE
+
+ https://www.codechef.com/LP3TO408/problems/ADIMAT
+
+ https://www.codechef.com/LP3TO408/problems/PTREE
+
+ https://www.codechef.com/LP3TO408/problems/INFDIV
+
+ https://www.codechef.com/LP3TO408/problems/NEWREST
+
+ https://www.codechef.com/LP3TO408/problems/TREDEG
+
+ https://www.codechef.com/LP3TO408/problems/CHEFWD
+
+ https://www.codechef.com/LP3TO408/problems/OLYMPIC
+
+ https://www.codechef.com/LP3TO408/problems/MOBCNT
+
+ https://www.codechef.com/LP3TO408/problems/CNTWAYS

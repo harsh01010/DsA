@@ -1,0 +1,109 @@
+   ***************************************GIT AND GITHUB FOR ABSOLUTE BEGINNERS**********************************************
+________________________________________________________________________________________________________________________________
+   # What is git ?
+    Git is a distributed version control system(vcs),
+     some functions:
+      . Git is a software
+      . Git is a command-line tool
+      . Easily recovers files
+      . Tells about all the changes made in a files
+      . Roll back to previously working state
+      . almost every operation is local
+
+  # What is github?
+   .Git hub is an online service , which can host a git repository
+   .GitHub is maintained by Microsoft
+   .GitHub is focused on centralized source code hosting
+   .GitHub includes a free-tier and pay-for-use tier
+
+________________________________________________________________________________________________________________________________
+
+# Downloading git.
+
+.download git from the link :-  https://git-scm.com/download/win  (for windows )
+
+.complete the installation , keep all the settings as it is(keep them default).
+
+.search git bash on your windows search box , and open it , if you are able to see a command line interface then your git installation is successful.
+
+_____________________________________________________________________________________________________________________________________________
+
+
+# tracking and initializing a directory(or folder)
+
+> suppose you have a folder or directory on your computer , in this directory you save all your codes and projects
+  and you want  to track all the changes in your codes (e.g: log of changes in code , recovering deleted files e.t.c.)
+  then you can initialize your git in this directory.
+  so,
+> Open your desired directory , right click and you would be able to see these two options 1. git gui here 2. git bash here
+> click on git bash here.
+  you will see a command line interface.
+
+> To initialize git in this directory use following command:  |
+                                                              |   
+    git init                                                  |
+                                                              |
+> Set user and email for first time -                         |  
+  use following command                                       |
+   f or name:                                                 |        YOU DON'T HAVE TO REPEAT THESE STEPS AGAIN , THEY ARE FOR INITIAL SETUP
+             git config --global user.name "yourname"         | 
+  for email:                                                  |
+             git config --global user.email "youremail"       | 
+                                                              |
+ after this you can check using following command:            |
+             git config --list                                | 
+
+__________________________________________________________________________________________________________________________________________________________________
+
+# some basic commands:(follow these steps or commands to track all the changes on git whenever you add new file or edit a file)
+ 
+ > to check status of your directory:
+
+   git status
+
+> to add all the created files and changes
+                                      
+   git add .
+
+> to finalize or commit the changes
+
+   git commit -m "messagesString"      , messagesString can be any message 
+
+________________________________________________________________________________________________________________________________________________________________________
+
+# creating GITHUB repository and attaching it's url to our project / directory
+
+. go to https://github.com/ , create an account(sign  up) if you don't have a git github account
+
+> creating repository:
+. go to create new repository on GitHub webpage or https://github.com/new & create a new repository , give it  any name , choose it's visibility(public or  private)
+and click on create repository.
+.Now you will land onto the repository page , which you have just created,
+you can see a link on the top part in code section (e.g. https://github.com/harsh01010/fictional-potato.git) , you need to copy this link which will be used to attach your git with github.
+
+> attaching to directory:
+
+To upload your codes  or projects on github you need to push it using git command , and before it you have to attach the link of your repository, where you want to
+upload.
+to attach use the following command:
+   
+        git remote add origin  url      (url is the link of your repository ,  which you have just copied)
+
+that's it your repository and directory has been linked :)
+
+to check the linked repository to your directory use the command:
+
+        git remote -v
+
+Now suppose you have written some code or edited a previous file in this your directory And your want to save all the changes on GitHub,
+
+then use add , and commit (i have discussed these command above) and check the status.
+
+after that push the changes on github using following command:
+ 
+    git push origin master
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+THIS WAS ALL BASICS , IF YOU WISH TO LEARN MORE YOU CAN VISIT ANY ONLINE TUTORIAL , YOU WILL BE ABLE TO UNDERSTAND.
+______________________________________________________________________________________________________________________________________________________
