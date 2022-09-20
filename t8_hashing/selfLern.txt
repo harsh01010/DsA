@@ -1,0 +1,67 @@
+   SORTING
+
+    https://www.codechef.com/LP2TO302/problems/SMPAIR
+
+    https://www.codechef.com/LP2TO302/problems/TACHSTCK
+
+    https://www.codechef.com/LP2TO302/problems/SRTCHK
+
+    https://www.codechef.com/LP2TO302/problems/DIV03
+
+    https://www.codechef.com/LP2TO302/problems/CNTSORT
+    
+    https://www.codechef.com/LP2TO302/problems/MIXCOLOR
+
+    https://www.codechef.com/LP2TO302/problems/CM164364
+
+    https://www.codechef.com/LP2TO302/problems/SUBS
+
+    https://www.codechef.com/LP2TO302/problems/PTMSSNG
+
+    https://www.codechef.com/LP2TO302/problems/CNTDIST
+
+    https://www.codechef.com/LP2TO302/problems/MEX
+
+    https://www.codechef.com/LP2TO302/problems/EQDIFFER
+
+    https://www.codechef.com/LP2TO302/problems/JAVELIN
+
+    https://www.codechef.com/LP2TO302/problems/BOOKCHEF
+
+    https://www.codechef.com/LP2TO302/problems/REMONE
+
+    https://www.codechef.com/LP2TO302/problems/PSORT3
+
+    https://www.codechef.com/LP2TO302/problems/SWPSRT1
+
+    https://www.codechef.com/LP2TO302/problems/CHEFRES
+
+    https://www.codechef.com/LP2TO302/problems/ADJSRT
+
+    https://www.codechef.com/LP2TO302/problems/BNSRCH1
+
+    https://www.codechef.com/LP2TO302/problems/QCKSRT2
+
+
+ BINARY SEARCH
+
+   https://www.codechef.com/LP2TO303/problems/AVGFLEX
+
+   https://www.codechef.com/LP2TO303/problems/MINEAT
+
+   https://www.codechef.com/LP2TO303/problems/STACKS
+
+   https://www.codechef.com/LP2TO303/problems/FORESTGA
+
+   https://www.codechef.com/LP2TO303/problems/SHROUTE
+
+   https://www.codechef.com/LP2TO303/problems/SNAKEEAT
+
+   https://www.codechef.com/LP2TO303/problems/SNTEMPLE
+
+   https://www.codechef.com/LP2TO303/problems/SQUIRREL
+
+   https://www.codechef.com/LP2TO303/problems/MODEQ
+
+   https://www.codechef.com/LP2TO303/problems/FLUSHOT
+
