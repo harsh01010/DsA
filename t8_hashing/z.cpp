@@ -1,42 +1,48 @@
-#include<bits/stdc++.h>
-typedef long long int ll;
+#include <bits/stdc++.h>
 using namespace std;
-
-struct node
+#define ll long long
+#define mod 1000000007
+void solve()
 {
-      int data;
-      node* next;
-};
+     int n; cin>>n;
+     int arr[n]; for(auto &it:arr) cin>>it;
+     int brr[n]; for(auto &it:brr) cin>>it;
 
+     for(int i=0;i<n;i++) brr[i]-=arr[i];
+            sort(brr,brr+n);
+     int cnt=0;
 
-void print(node*x)
-{
-        while(x->next != nullptr)
+      int i= n-1 , j=0;
+ 
+   for(int i=0;i<n;i++) cout<<brr[i]<<" ";
+   cout<<"\n";
+        while(i<j)
         {
-              cout<<x->data<<"\n";
-              x = x->next;
+              if(brr[i]+brr[j] >=0)
+              {
+                  cnt++;
+                  i-- , j++;
+              }
+             else j++;
+              
         }
+
+        cout<<cnt<<"\n";
+
+
 }
+int main() {
+    //ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#ifndef ONLINE_JUDGE
+    freopen("i_p.txt", "r", stdin);
+    freopen("o_p.txt", "w", stdout);
+#endif
 
-int main()
-{
-    
-
-         int n;
-          cout<<"enter the total number of node in the linked list\n";
-          cin>>n;
-          node arr[n];
-          for(int i=0;i<n;i++)
-          {
-              int x; cin>>n;
-              arr[i]->data = x;
-              if(i == n-1) arr[i]->next = nullptr;
-              else arr[i]->next = arr[i+1];
-          }
-
-     print(arr[0]);
-
-
-
-return 0;
+    ll test=1;
+    cin>>test;
+    while(test--)
+    {
+        solve();
+    }
+    return 0;
 }

@@ -4,14 +4,25 @@ using namespace std;
 
 int main()
 {
-    #ifndef ONLINE_JUDGE
-    freopen("i_p.txt", "r", stdin);
-    freopen("o_p.txt", "w", stdout);
-    #endif
+  #ifndef ONLINE_JUDGE
+  freopen("i_p.txt", "r", stdin);
+  freopen("o_p.txt", "w", stdout);
+  #endif
 
-      vector<int>arr{1,2,3,4,5,56};
+    int n; cin>>n;
+      
 
-      cout<<upper_bound(arr.begin(),arr.end(),0) - arr.begin();
+      for(  int i=1;i<=n;i++)
+      {
+          for(int j=1;j<=n;j++)
+          {
+              if( i == 1 or i == n)  cout<<"*  ";
+
+              else if(j == (n-i+1)) cout<<"*  ";
+              else cout<<"   ";
+          } 
+          cout<<"\n";
+      }
 
 
 

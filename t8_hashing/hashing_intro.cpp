@@ -55,7 +55,7 @@
     to have same birthday.
     if there are 70 people then probablity bcomes 99.9%
 
--> if we know the keys in advanced then we can handle collision , using perfect hashing(advanced hashing technique).
+-> if we know the keys in advanced then we can handle collision , using perfect hashing(advanced hashing technique ,insures no collisions).
 
 -> if we do not the keys in advanced then collisions are bound to happen,
   to handle collision,
