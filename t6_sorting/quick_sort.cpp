@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 typedef long long int ll;
 using namespace std;
+  
 
+  // lomuto and hoarse are partition functions, used in quick sort.
   int lomuto(int arr[],int lo,int hi)
   {
      int pivot = arr[hi];
@@ -48,7 +50,7 @@ using namespace std;
    . tail recursive (can be converted into iterative)
    . naive , lomuto , hoarse // partition functions
    . unstable
-   . on average it is fastests
+   . on average it is fastest
    . space: wrost case N , best case logN
  */
    //using lomuto (last element as pivot)
