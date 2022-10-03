@@ -3,49 +3,52 @@ typedef long long int ll;
 using namespace std;
 
 
-   // subarray with given sum
-  int sum(vector<int>arr,int n,int k)
-  {
-       int pre = 0 , len = 0;
-       unordered_map<int,int>mp;
-        for(int i=0;i<n;i++)
-        {
-               pre+=arr[i];
-                if(pre == k) len = i+1;
-                else if( mp.find(pre-k) != mp.end())
-                {
-                      len = max(len,i-mp[pre-k]);
-                }
-               mp.insert({pre,i});
-                
-        }
-        return len;
-  }
+void sortt(int arr[] , int n , int brr[] , int m)
+{
 
-  // for  max length subarray with  equal number of zero and one , replace zero with -1
-  // and find maximum len subarray with zero sum
+    vector<int>temp;
+      map<int,int>omp;
+       for(int i=0;i<n;i++) omp[arr[i]]++;
+       for(auto it:omp) cout<<it.first<<"->"<<it.second<<"\n";
+
+         for(int i=0;i<m;i++)
+         {
+              int x = brr[i];
+               if(omp.find(x) != omp.end())
+               {
+                      int t = omp[x];
+                      for(int i=0;i<t;i++) cout<<x<<" ";
+                      omp.erase(x);
+               }
+               else temp.push_back(x);
+         }       
+         
+         for(auto it:omp)
+         {
+             int t = it.second;
+              for(int i=0;i<t;i++)
+               cout<<it.first<<" ";
+         }
+}
 
 
 int main()
 {
-    #ifndef ONLINE_JUDGE
-    freopen("i_p.txt", "r", stdin);
-    freopen("o_p.txt", "w", stdout);
-    #endif
+  #ifndef ONLINE_JUDGE
+  freopen("i_p.txt", "r", stdin);
+  freopen("o_p.txt", "w", stdout);
+  #endif
 
-      
-      int n , s; cin>>s>>s;
-      vector<int>arr;
-        for(int i=0;i<n;i++)
-        {
-              int e;
-               cin>>e;
-                 if(e== 0) arr.push_back(-1);
-                 else arr.push_back(1);
-        }
+     int n ,m;
+       cin>>n>>m;
+         int arr[n] , brr[m];
+          for(auto &it:arr) cin>>it;
+          for(auto it:arr)cout<<it<<" "; cout<<"\n";
 
-     cout<<sum(arr,n,s)<<"\n";
+          for(auto &it:brr) cin>>it;
+          for(auto it:brr) cout<<it<<" "; cout<<"\n";
 
+     sortt(arr,n,brr,m);
 
 return 0;
 }

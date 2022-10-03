@@ -50,7 +50,7 @@ int main()
 {
    solution problem;
     problem.takeinput();
-    
+  
     int ans = problem.solve();
     if(ans!= -1)
     {cout<<"the majority element is : "; problem.print(ans);}

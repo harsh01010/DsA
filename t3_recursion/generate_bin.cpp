@@ -13,4 +13,5 @@ int main(){
      int n;
       while( cin>>n)
          func(n); 
+         return 0;
 }
