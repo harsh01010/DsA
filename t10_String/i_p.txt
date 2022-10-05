@@ -1,0 +1,7 @@
+3
+aaaaa
+aaa
+abababcd
+abab
+abcabcd
+abcd

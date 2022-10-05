@@ -1,0 +1,25 @@
+/*
+ 
+   Strings in c/c++:
+
+   1. c style strings:
+      
+       char str[] = "gfg"; => {'g' , 'f', 'g', '\0' };
+
+       strlen(str) , strcmp(s1,s2) -> -ve if s1 is lexiographically smaller , +ve if greater and 0 if equal
+       strcpy(s1,s2)
+
+  2. c++ string class:
+
+    -> Rich libaray
+    ->supports : + , < , > , == , >= , <= etc.
+    ->dynamic
+    -> can be converted into c style string if needed
+
+
+   . getline(cin,str) -> takes spaces also
+   . getline(cin,str,'a') -> stops after ecountering a
+
+
+   str.find("eek") -> returns the first index of occ. of eek , if it is not present the returns string::npos(no position found)
+   */

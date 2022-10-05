@@ -125,4 +125,43 @@ int main()
     for(auto &it : arr) cout<<it<<" ";
 return 0;
 }
+//#################################################################################################################################################
+
+
+ Vector size and Capacity
+
+   vector<int>v;   initially : size = 0 , capacity = 0
+   v.push_back(3); -> size = 1 , capacity = 1
+   v.push_back(3) -> size = 2 , capacity = 2
+  v.push_back(4); -> size = 3 , capacity = 4
+  v.push_back(4); -> size = 4 , capcity = 4
+  v.push_back(4); -> size = 5 , capacity = 8  .........................
+          
+
+
+  capacity|size
+         1 1
+         2 2
+         4 3
+         4 4
+         8 5
+         8 6
+         8 7
+         8 8
+         16 9
+         16 10
+         16 11
+         16 12
+         16 13
+         16 14
+         16 15
+         16 16
+         32 17
+         32 18
+         32 19
+         32 20
+
+
+
+
 
