@@ -1,82 +1,79 @@
 
-   #include<bits/stdc++.h>
-   typedef long long int ll;
-   using namespace std;
-   
+#include <bits/stdc++.h>
+typedef long long int ll;
+using namespace std;
 
-   class myhash{
-           public:
-            int size = 0;
-             int capacity;
-             int *table;
+class myhash
+{
+public:
+  int size = 0;
+  int capacity;
+  int *table;
 
-       myhash(int n)
-       {
-              table = new int[n];
-              memset(table , -1 ,sizeof(table));
-       }
+  myhash(int n)
+  {
+    table = new int[n];
+    memset(table, -1, sizeof(table));
+    capacity = n;
+  }
 
-       int hash(int key){
-        return key%capacity;
+  int hash(int key)
+  {
+    return key % capacity;
+  }
+  bool insert(int key)
+  {
+    int i = hash(key);
+
+    if (size == capacity)
+      return false;
+
+    while (i != -1 or i != -2 or table[i] != key)
+    {
+      i = (i + 1) % capacity;
     }
+    if (table[i] == key)
+      return false;
+    else
+    {
+      table[i] = key;
+      size++;
+      return true;
+    }
+    return false;
+  }
 
-       bool insert(int key)
-       {
-          int i = hash(key);
+  bool search(int key)
+  {
+    int h = hash(key);
+    int i = h;
 
-            if(size == capacity) return false;
+    while (table[i] != -1)
+    {
+      if (table[i] == key)
+        return true;
 
-             while( i!= -1 or i!=  -2 or table[i]!=key)
-                 {
-                     i = (i+1)%capacity;
-                 }
-                 if(table[i] == key) return false;
-              else{
-                     table[i] = key;
-                     size++;
-                       return true;
-              }
-              return false;
-       }
+      i = (i + 1) % h;
+      if (i == h)
+        return false; // traversed circularly and got same index agian
+    }
+    return false;
+  }
+};
 
-        bool search(int key)
-        {
-            int h = hash(key);
-            int i = h;
+int main()
+{
+#ifndef ONLINE_JUDGE
+  freopen("i_p.txt", "r", stdin);
+  freopen("o_p.txt", "w", stdout);
+#endif
 
-             while(table[i] != -1)
-             {
-               if(table[i] == key) return true;
-                
-                i = (i+1)%h;
-                if(i==h) return false;  // traversed circularly and got same index agian
-             }
-             return false;
-        }
+  myhash table(10);
 
+  table.insert(44);
 
-
-
-   };
-
-
-   int main()
-   {
-    #ifndef ONLINE_JUDGE
-    freopen("i_p.txt", "r", stdin);
-    freopen("o_p.txt", "w", stdout);
-    #endif
-   
-    myhash table(10);
-
-    table.insert(44);
-     
-   
-   
-   
-   return 0;
-   }
-
+  return 0;
+}
 
 /*
 
@@ -89,7 +86,7 @@
    3. ways : linear probing , quadratic probing , double hashing
 
    linear probing:
-   arr -> n+1 
+   arr -> n+1
    hash(key)  = key%7
 
    table[ hash(key) ] = arr[i] , if it is  already occupied,
@@ -100,8 +97,8 @@
      .if we delete a element then it will create an empty slot ,this problem can be solved by marking the deleted slots
      clustering:
       primary clustering: group of elements , then some empty spaces , and again some group of some elements.(empty slots between two group of elements)
-      secondary clustering: geting same index by the hash funciton again and again 
-    
+      secondary clustering: geting same index by the hash funciton again and again
+
     2. quadratic hahsing :
       hash(key,i) = (h(key) + i^2 )%m , this function will be used if we get occupied index from our hash function.
 
@@ -109,7 +106,7 @@
 
        if  alpha(n/m) < 0.5 and m is prime then oly quadrtic probing will find an empty slot.
 
-   3. double hashing 
+   3. double hashing
      hahs(key,i  )  = (h1(key) + i*(h2(key)))%m
 
       h1(key) = key%6
@@ -131,8 +128,3 @@
      or , 1/(1-alpha).
 
      */
-
-
-
-
-

@@ -1,25 +1,25 @@
 #include<bits/stdc++.h>
-#define ll long long
+typedef long long int ll;
 using namespace std;
-
-int ser(int low , int high , int ele){
-
-   if(low>high) return 0;
-
-   
-         
-
-}
 
 int main()
 {
+  #ifndef ONLINE_JUDGE
+  freopen("i_p.txt", "r", stdin);
+  freopen("o_p.txt", "w", stdout);
+  #endif
 
-    vector<int>arr = {1 ,2 ,3,4,5,20,33,44,55,66};
-     int ele = 44;
+     ll n;
+       cin>>n;
+       while(n != 1)
+       {
+            cout<<n<<" ";
+            if(!(n&1)) n>>=1;
+            else n = n*3 + 1;
+       }
+       cout<<"1 \n";
 
-    
 
-       int pos  = ser(0 , arr.size()-1 , ele);
-        
+
 return 0;
 }
