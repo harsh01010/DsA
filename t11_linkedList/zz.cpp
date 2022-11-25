@@ -2,41 +2,48 @@
 typedef long long int ll;
 using namespace std;
 
-int sod(int num)
+
+
+void insert(int *arr , int x , int n)
 {
-        int ans = 0;
-        while(num > 0)
+        if(n == 0) {arr[0] = x; return ;}
+
+       int i = n-1;
+        while(arr[i] > x and i>=0)
         {
-            ans = ans + num%10;
-            num/=10;
+              arr[i+1] = arr[i];
+              i--;
         }
-        return ans;
+        arr[i+1] = x;
 }
 
 int main()
 {
+//     #ifndef ONLINE_JUDGE
+//     freopen("i_p.txt", "r", stdin);
+//     freopen("o_p.txt", "w", stdout);
+//     #endif
+
     
- /*
-     int a ,b,k; cin>>a>>b>>k;
-     int c = pow(a,b);
 
-     int f = pow(10,k-1);
+   int size; cin>>size;
+       int arr[size];
+       cout<<"enter the total numbers to be inserted:\n";
+        int n; cin>>n;
+         cout<<"enter elements:\n";
+        for(int i=0;i<n;i++)
+        {
+              int x; cin>>x;
+              insert(arr,x,i);
+        }
+        cout<<"after insertion:\n";
+        for(int i=0;i<n;i++)
+        {
+              cout<<arr[i]<<" ";
+        }
+        cout<<"\n";
 
-     cout<<(c/f)%10<<"\n";
-*/
-
-int num; cin>>num;
-  while(num/10)
-  {
-      num = sod(num);
-  }
-
-  cout<<num<<"\n";
-
-
- 
-
-
+      
 
 return 0;
 }
