@@ -1,0 +1,2 @@
+head = 0x1ffcf3f17a0
+[ 10 ,0x1ffcf3f1ae0 ] ->  curr = 0x1ffcf3f1ae0 [ 20 ,0x1ffcf3f1b00 ] ->  curr = 0x1ffcf3f1b00 [ 30 ,0 ] ->  curr = 0 NULL
