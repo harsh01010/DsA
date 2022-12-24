@@ -1,0 +1,17 @@
+/* Infix , Postfix and Prefix
+  
+
+  Infix : that we generally write , use them in mathematical expressions and programset.
+  eg: x+y*x
+
+  postfix : xy+
+
+  prefix : +xy
+
+  advantages of prefix and postfix:
+    -> do not require parenthesis , precedence rule or associativity
+
+    -> can be evaluated by writing a program that traverses the given expression once.
+
+
+*/

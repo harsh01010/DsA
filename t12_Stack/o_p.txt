@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+typedef long long int ll;
+using namespace std;
+
+string convert(string s)
+{
+      stack<string>stac
+}
+
+int main()
+{
+    
+     string s; cin>>s;
+
+
+
+return 0;
+}
