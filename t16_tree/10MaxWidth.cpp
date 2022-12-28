@@ -15,10 +15,31 @@ struct Node{
 
  
 
- void SpiralLevelTrv(Node*root)
+ int Func(Node*root)
  {
+      queue<Node*>q;
+      q.push(root);
+      
+      int siz = 0;
+         
+      while( !q.empty())
+      {
+           int cnt = q.size(); // for each node we will push its childrens
+           
+            siz = max(siz , cnt); 
 
-       
+           while(cnt--)
+           {
+                 Node*temp = q.front();
+                 q.pop();
+                 if(temp->left) q.push(temp->left);
+                 if(temp->right) q.push(temp->right);
+               
+           }
+
+      }
+
+      return  siz;
  }
 
 int main()

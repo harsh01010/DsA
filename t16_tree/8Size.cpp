@@ -13,12 +13,10 @@ struct Node{
       }
 };
 
- 
-
- void SpiralLevelTrv(Node*root)
+ int countNode(Node*root)
  {
-
-       
+      if(root == NULL) return 0;
+    return 1 + countNode(root->left) + countNode(root->right); 
  }
 
 int main()
@@ -40,10 +38,9 @@ int main()
    root->left->right->left = new Node(100);
    root->right->right->right = new Node(1);
 
-   
-    int x = Func(root);
+   int x = countNode(root);
+   cout<<x<<"\n";
 
-    cout<<x<<"\n";
   
     
     

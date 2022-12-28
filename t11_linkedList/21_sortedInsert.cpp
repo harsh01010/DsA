@@ -49,10 +49,8 @@ node* insertSorted(node* head , int x)
 }
 int main()
 {
-     #ifndef ONLINE_JUDGE
-     freopen("i_p.txt", "r", stdin);
-     freopen("o_p.txt", "w", stdout);
-     #endif
+     
+     
    
     node* head = NULL;
     int n; cin>>n;

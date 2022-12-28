@@ -13,14 +13,30 @@ struct Node{
       }
 };
 
- 
+// void help(Node*root , int k , int cnt = 0)
+// {
+//     if(root == NULL) return;
+//     if(cnt == k) cout<<root->data<<" ";
+//      int x = cnt+1;
+//      help(root->left , k , x);
+//      help(root->right,k,x);
+     
+// }
 
- void SpiralLevelTrv(Node*root)
- {
 
-       
- }
+// void print(Node*root , int k)
+// {
+//      help(root , k ,0);
+// }
 
+
+  void print(Node*root , int k)
+  {
+         if(root == NULL) return;
+         if(k==0)cout<<root->data<<" ";
+         print(root->left , k-1);
+         print(root->right , k-1);
+  }
 int main()
 {
    
@@ -40,13 +56,10 @@ int main()
    root->left->right->left = new Node(100);
    root->right->right->right = new Node(1);
 
-   
-    int x = Func(root);
+   print(root , 3);
+    
 
-    cout<<x<<"\n";
-  
-    
-    
+
 
 return 0;
 }

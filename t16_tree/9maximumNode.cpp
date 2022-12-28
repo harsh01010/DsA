@@ -13,12 +13,12 @@ struct Node{
       }
 };
 
- 
-
- void SpiralLevelTrv(Node*root)
+ int maximum(Node*root)   // we can also create an iterative solution , using level ordre traversal 
  {
+      if(root == NULL)
+       return INT_MIN;
 
-       
+     return max(root->data , max( maximum(root->left) , maximum(root->right)));
  }
 
 int main()
@@ -40,10 +40,9 @@ int main()
    root->left->right->left = new Node(100);
    root->right->right->right = new Node(1);
 
-   
-    int x = Func(root);
+   int x = maximum(root);
+   cout<<x<<"\n";
 
-    cout<<x<<"\n";
   
     
     
