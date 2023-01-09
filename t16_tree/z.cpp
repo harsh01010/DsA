@@ -1,52 +1,115 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 typedef long long int ll;
 using namespace std;
 
-struct Node{
+struct node
+{
       int data;
-      Node *left , *right;
-
-      Node(int d)
+      node *left;
+      node *right;
+      node(int x)
       {
-         data = d;
-         left = right = NULL;
+            data = x;
+            left = right = NULL;
       }
 };
+int height(node *root)
+{
+      if (root == NULL)
+            return 0;
+      return max(height(root->left), height(root->right)) + 1;
+}
 
- 
+// the diameter of binary tree will be max of (left height + right height +1) of all the nodes.
 
- void SpiralLevelTrv(Node*root)
- {
+/*
+method 1:
+calculate (left height + right height +1) for each node and find the maximum value
+this approach has time complexity of O(n^2)
+*/
 
-       
- }
+int diameter(node *root)
+{
+      if (root == NULL)
+            return 0;
+      int d = height(root->left) + height(root->right) + 1;
+      int l = diameter(root->left);
+      int r = diameter(root->right);
+      return max(d, max(l, r));
+}
+
+/*
+method 2:
+use above method , but insted of calculating the height each time , just precompute it.
+use unordered_map<node*,int>
+*/
+
+unordered_map<node *, int> ht;
+
+void precompute(node *root)
+{
+      if (root == NULL)
+      { ht[root] = 0; return;}
+      ht[root] = height(root);
+      precompute(root->left);
+      precompute(root->right);
+}
+
+int compute(node *root)
+{
+      if (root == NULL)
+            return 0;
+      int d = ht[root->left] + ht[root->right] + 1;
+      int l = compute(root->left);
+      int r = compute(root->right);
+
+      return max(d, max(l, r));
+}
+
+int diameter2(node *root)
+{
+      precompute(root);
+      return compute(root);
+}
+
+
+/*
+method 3: 
+remove the overhead caused by the map in the above solution.
+just modify the height function.
+*/
+int ans = 0;
+int diameter3(node*root)
+{
+      if(root == NULL) return 0;
+      int x = diameter3(root->left);
+      int y = diameter3(root->right);
+      ans = max(ans,x+y+1);
+      return max(x+1,y+1);
+
+}
 
 int main()
 {
-   
-  Node *root = new Node(10);
+      node *root = new node(10);
+      root->right = new node(20);
+      root->left = new node(30);
+      root->left->left = new node(40);
+      root->left->left->left = new node(50);
+      root->left->left->right = new node(60);
+      root->left->right = new node(70);
+      root->left->right->right = new node(80);
+      root->left->right->right->right = new node(90);
+      cout<<"pass\n";
+      int ans = diameter(root);
+      cout<<"pass\n";
+      int ans2 = diameter2(root);
+      cout<<"pass\n";
+      diameter3(root);
+      cout<<"pass\n";
+      int ans3 = ::ans;
+      cout<<ans<<"\n"<<ans2<<"\n"<<ans3<<"\n";
 
-   root->left = new Node(20);
-   root->right = new Node(30);
-
-   root->left->left= new Node(40);
-   root->left->right = new Node(50);
-   root->right->left= new Node(60);
-   root->right->right = new Node(70);
-
-
-   root->left->left->left = new Node(80);
-   root->left->left->right = new Node(90);
-   root->left->right->left = new Node(100);
-   root->right->right->right = new Node(1);
-
-   
-    int x = Func(root);
-
-    cout<<x<<"\n";
-  
-    
-    
-
-return 0;
+      return 0;
 }
+
