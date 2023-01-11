@@ -39,26 +39,13 @@ node *LCA(node *root, int n1, int n2)
             return NULL;
       // iterate the path arrays for both nodes , untill we find first mismatch, all previous elemetns will be ancestor of these two nodes,node before the mismatch will be lowest comman ancestor for two nodes.
       int i = 0;
-      for (; i < path1.size() - 1 && i < path2.size() - 1; i++)
+      for(;i<path1.size() and i<path2.size();i++)
       {
-            if (path1[i + 1] != path2[i + 1])
-                  return path1[i];
+            if(path1[i] != path2[i]) break;
       }
-      /*
-      10 , 30 ,40
-      10 , 30 ,40 ,60
-      in above we will return 40
-*/
-
-      if (i < path1.size() - 1)
-      {
-            return path2[i];
-      }
-      if (i < path2.size() - 1)
-      {
-            return path1[i];
-      }
-
+      if(i<path1.size() and i<path2.size()) return path1[i-1];
+      if(i<path1.size()) return path2[i-1];
+      if(i<path2.size()) return path2[i-1];
       return NULL;
 }
 
