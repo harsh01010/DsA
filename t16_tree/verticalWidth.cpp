@@ -13,6 +13,22 @@ struct node
         left = right = NULL;
     }
 };
+unordered_set<int> st;
+void f(node *root, int k = 0)
+{
+    if (root == NULL)
+        return;
+    f(root->left, k - 1);
+    st.insert(k);
+    f(root->right, k + 1);
+}
+
+int VerticalWidth(node *root)
+{
+    st.clear();
+    f(root);
+    return st.size();
+}
 
 int main()
 {
@@ -37,5 +53,8 @@ int main()
                                \
                                 90
     */
+    int vw = VerticalWidth(root);
+    cout << vw << "\n";
+
     return 0;
 }

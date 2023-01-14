@@ -14,6 +14,30 @@ struct node
     }
 };
 
+// check if a given tree is a subtree of a given tree.
+// given : S , T , check if S is subtree of T
+
+bool identical(node*s , node*t)
+{
+    if(s==NULL and t==NULL) return true;
+    if(s==NULL) return false;
+    if(s==NULL) return false;
+
+    return(s->data == t->data and identical(s->left,t->left) and identical(s->right,t->right));
+}
+
+bool isSubtree(node*s,node*t)
+{
+    if(s==NULL) return true;
+    if(t==NULL) return false;
+    if(identical(s,t)) return true; // if trees are exactly same.
+    return isSubtree(s,t->left) || isSubtree(s,t->right);
+}
+
+/*
+this soultion has O(n*m) time complexity , where n and m are nubmer of nodes in both trees.
+this problem has also an O(n) time complexity , but i'm still figuring it out 🤦‍♂️
+*/
 int main()
 {
     node *root = new node(10);

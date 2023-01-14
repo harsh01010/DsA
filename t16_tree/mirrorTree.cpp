@@ -13,7 +13,25 @@ struct node
         left = right = NULL;
     }
 };
+unordered_set<int> st;
+void f(node *root, int k = 0)
+{
+    if (root == NULL)
+        return;
+    f(root->left, k - 1);
+    st.insert(k);
+    f(root->right, k + 1);
+}
 
+void mirrorTree(node*root)
+{
+    if(root==NULL)return;
+        node*temp = root->left;
+        root->left = root->right;
+        root->right = temp;
+        mirrorTree(root->left);
+        mirrorTree(root->right);
+}
 int main()
 {
     node *root = new node(10);
@@ -37,5 +55,6 @@ int main()
                                \
                                 90
     */
+    mirrorTree(root);
     return 0;
 }

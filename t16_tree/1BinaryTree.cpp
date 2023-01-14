@@ -33,7 +33,7 @@ Types of Binary tree:
  Complete Binary Tree: A Binary Tree is a complete Binary Tree if all levels are completely filled except possibly the last level and the last level has all keys as left as possible.
 
 
- Perfect Binary Tree: A Binary tree is a Perfect Binary Tree when all internal nodes have two children and all the leave nodes are at the same level.
+ Perfect Binary Tree: A Binary tree is a Perfect Binary Tree when all internal nodes have two children and all the leaf nodes are at the same level.
 
 */
 
