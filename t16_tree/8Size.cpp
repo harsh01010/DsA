@@ -13,11 +13,34 @@ struct Node{
       }
 };
 
- int countNode(Node*root)
- {
+int countNode(Node*root)
+{
       if(root == NULL) return 0;
-    return 1 + countNode(root->left) + countNode(root->right); 
- }
+   return 1 + countNode(root->left) + countNode(root->right); 
+}
+
+/* if the tree is complete binary tree then we can optimize the solution to O(logn*logn)*/
+
+int count(Node*root)
+{
+   int lh = 0 , rh=0;
+   Node*curr = root;
+   while(curr)
+   {
+      lh++;
+      curr=curr->left;
+   }
+   curr=root;
+   while(curr)
+   {
+      rh++;
+      curr=curr->right;
+   }
+
+if(rh==rh) return pow(2,lh)-1;  // if binary tree is perfect binary tree 
+else return 1+count(root->left)+count(root->right); // else
+}
+/*******                                                                      */
 
 int main()
 {
