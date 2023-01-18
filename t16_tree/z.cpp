@@ -14,28 +14,8 @@ struct node
     }
 };
 
-bool fun(node*x,node*y)
-{
-    if(x==y==NULL) return true;
-    if(x==NULL|| y==NULL) return false;
 
-    /*      10
-           /  \ 
-          20    40
-          \      /
-           30   70
-           for foldable:
-    if left -> right
-    if right -> left 
-    */
-return fun(x->right,y->left) && fun(x->left,y->right);
-}
 
-bool Foldable(node*root)
-{
-    if(root==NULL) return true;
-    return Fun(root->left,root->right);
-}
 int main()
 {
     node *root = new node(10);
@@ -59,5 +39,6 @@ int main()
                                \
                                 90
     */
+    
     return 0;
 }

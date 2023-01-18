@@ -14,28 +14,37 @@ struct node
     }
 };
 
-bool Fun(node*x,node*y)
-{
-    if(x==y==NULL) return true;
-    if(x==NULL|| y==NULL) return false;
+/*
+ total number of subtree with given sum
 
-    /*      10
-           /  \ 
-          20    40
-          \      /
-           30   70
-           for foldable:
-    if left -> right
-    if right -> left 
-    */
-return Fun(x->right,y->left) && Fun(x->left,y->right);
+ evaluate left sum + right sum (if exists) + self value for each vertex.
+ if it matches with the given sum increment the count.
+ */
+int f(node* root, int&c,int x)
+{
+    if(root->left == NULL and root->right == NULL)
+    {
+        if(root->data == x) c=c+1;
+        return root->data;
+    }
+    int ls=0,rs=0;
+    if(root->left != NULL)
+    ls = f(root->left , c,x);
+    
+    if(root->right != NULL)
+    rs = f(root->right,c,x);
+    
+    if(ls+rs+root->data == x) c++;
+    return  (ls+rs+ (root->data));
+}
+int countSubtreesWithSumX(node* root, int X)
+{
+	// Code here
+	int count=0;
+	f(root,count,X);
+	return count;
 }
 
-bool Foldable(node*root)
-{
-    if(root==NULL) return true;
-    return Fun(root->left,root->right);
-}
 int main()
 {
     node *root = new node(10);

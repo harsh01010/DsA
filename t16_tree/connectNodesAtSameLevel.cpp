@@ -7,6 +7,7 @@ struct node
     int data;
     node *left;
     node *right;
+    node*nextPtr;
     node(int x)
     {
         data = x;
@@ -14,28 +15,43 @@ struct node
     }
 };
 
-bool Fun(node*x,node*y)
-{
-    if(x==y==NULL) return true;
-    if(x==NULL|| y==NULL) return false;
+/*
 
-    /*      10
-           /  \ 
-          20    40
-          \      /
-           30   70
-           for foldable:
-    if left -> right
-    if right -> left 
-    */
-return Fun(x->right,y->left) && Fun(x->left,y->right);
+connect nodes at same level:
+idea: use lavel order traversal
+
+if the size of queue is 1 the connect the containing node to NULL, else connect it to next node in the queue
+*/
+
+void Bfs(node*root)
+{   if(root ==NULL) return;
+    queue<node**>q; // can also go for single pointer 
+    q.push(&root);
+
+    while(!q.empty())
+    {
+        int x = q.size();
+        for(int i=0;i<x;i++)
+        {    
+            node**temp = q.front();
+            q.pop();
+            if(i==x-1)
+            {
+                (*temp)->nextPtr=NULL;
+                
+            }
+            else{
+                (*temp)->nextPtr= *(q.front());
+            }
+            if( (*temp)->left)
+            q.push( &((*temp)->left));
+            if( (*temp)->right)
+            q.push(&((*temp)->right));
+        }
+
+    }
 }
 
-bool Foldable(node*root)
-{
-    if(root==NULL) return true;
-    return Fun(root->left,root->right);
-}
 int main()
 {
     node *root = new node(10);
