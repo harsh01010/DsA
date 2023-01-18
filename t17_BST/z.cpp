@@ -21,6 +21,30 @@ void traverse(node*root)
     traverse(root->right);
 }
 
+/*
+delete operation:
+we also have to take care of the situation when we delete non leaf node and other nodes associated to that needed to be readjusted in the tree such that tree follow the properties of the binary search tree.
+
+        50
+       /   \ 
+      20    70
+      \     /  \ 
+       40   60  80
+
+let's assume we have to delete 50, 
+then we will be having to options of our root, 
+1.closest higher value(difference wise) -> it is inorder sucessor(next node that comes next in inorder traversal)
+2.closest lower value(difference wise)
+so, we can choose 40 or 60 at the place of 50.
+  
+  hence we can get,
+            40                          60   
+           /   \                       /   \ 
+          20     70             OR     20   70 
+                /  \                   \      \ 
+                60   80                 40     80
+
+*/
 int main()
 {
 
@@ -46,7 +70,16 @@ root->right->right->right->right=new  node(80);
                                        80
 */
 
-traverse(root);
+traverse(root);cout<<"\n";
+root=insertRec(root,54);
+traverse(root);cout<<"\n";
+root=insertRec(root,19+1);
+traverse(root);cout<<"\n";
+root=insertIter(root,100);
+traverse(root);cout<<"\n";
+root=insertIter(root,7);
+traverse(root);cout<<"\n";
+
 
 
 
