@@ -21,6 +21,42 @@ void traverse(node*root)
     traverse(root->right);
 }
 
+/* ceil in Bst*/
+//recursive
+int ceil(node*root,int x)
+{
+    if(!root)return -1;
+    else if(root->data == x) return x;
+    else if(root->data > x)
+    {
+        int a = ceil(root->left,x);
+        return a!=-1 ? a:root->data;
+        /*
+        if root->data is greater than x , then there could be two cases 1. if it is the itself the ceil , 2. there are more smaller value of left side of
+        it which is greater or equal x. so if 2nd case exists i.e. function call for left does not returns -1 then we return that value other wise we return root data.
+         */ 
+    }
+    else 
+    {
+        return ceil(root->right,x);
+    }
+}
+//iterative
+int ceilIt(node*root,int x)
+{
+    int ans = -1;
+    while(root)
+    {
+        if(root->data == x) return root->data;
+        else if(root->data<x) root=root->right;
+        else
+        {
+            ans = root->data;
+            root=root->left;
+        }
+    }
+    return ans;
+}
 
 int main()
 {

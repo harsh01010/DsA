@@ -1,0 +1,100 @@
+/*
+
+Self-Balancing Binary Search Trees are height-balanced binary search trees that automatically keeps height as small as possible when insertion and deletion operations are performed on tree.
+The height is typically maintained in order of Log n so that all operations take O(Log n) time on average
+
+
+
+
+idea: Keep the height at O(logN)
+
+
+background: same set of keys can make different height BSTs !
+
+eg: 
+order 1 : 7 10 11 15 30 35 40 
+
+                      7
+                      \
+                       10
+                        \ 
+                         11
+                          \ 
+                           15 
+                            \ 
+                             30
+                               \ 
+                                35 
+                                 \ 
+                                  40 
+
+order 2: 15 10 7 11 35 30 40
+
+                                15
+                                / \ 
+                            10       35
+                          /   \      /  \    
+                         7    11    30   40 
+
+to keep the bst balanced we can do some restructuring(or re balancing) when doing insertin/deletion.
+
+insert(100) -> inert(200) -> insert(300)
+
+100                 100             100
+                      \              \     restructure              200
+                       200           200   ------------>           /   \ 
+                                      \                           100   300
+                                       300
+
+this restructuring is called "Rotation"
+
+                                    y                               x
+                                  / \     Right Rotation          /  \
+                                 x   T3   - - - - - - - >        T1   y 
+                                / \       < - - - - - - -            / \
+                               T1  T2     Left Rotation            T2  T3
+
+Rotations do not violet the BST property., 
+hence , 
+    left values < curr < right values
+
+    e.g.
+          
+          30(x)                                              20 
+        /   \         Right Rotation                       /    \ 
+       20(y)  40      - - - - - - - >                     10     30  
+      /  \                                               /      /  \  
+     10   25                                            5       25  40
+    /
+   5       
+
+Some examples of Self balancing trees are:
+AVL Tree
+Red Black Tree
+Splay Tree
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
