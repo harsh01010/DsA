@@ -59,7 +59,36 @@ struct AugNode{
         left = right =NULL;
         lcount = 0; 
     }
+};
+
+AugNode* insert(AugNode*root,int x)
+{
+    if(root==NULL)
+    return new AugNode(x);
+
+    if(x<root->data)
+    {
+        root->left = insert(root->left,x);
+        root->lcount++;
+    }
+    else if(x>root->data)
+    root->right = insert(root->right,x);
+    
+    return root;
 }
+
+AugNode* kth(AugNode*root,int k)
+{
+    if(root==NULL)
+    return root;
+    int count = root->lcount + 1;
+    if(count == k) return root;
+    if(count > k) 
+    return kth(root->left,k);
+    return kth(root->right,k-count-1); // when we go on right side we have to only consider right subtree , we will delete count of  nodes of left subtree and current node. 
+}
+
+
 
 int main()
 {
