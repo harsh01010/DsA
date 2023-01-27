@@ -24,18 +24,6 @@ void traverse(node *root)
 }
 
 
-// count of nodes in given range
-
-int count(node*root,int l,int h)
-{
-    if(root==NULL) return 0;
-    if(root->data <= h and root->data >= l)
-    return 1 + count(root->left,l,h) + count(root->right,l,h);
-    else if(root->data > l)
-    return count(root->left,l,h);
-    else
-    return count(root->right,l,h);
-}
 
 int main()
 {
@@ -64,3 +52,5 @@ int main()
 
     return 0;
 }
+
+
