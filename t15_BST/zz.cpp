@@ -1,50 +1,66 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 typedef long long int ll;
 using namespace std;
-/*
 
-10 20 30 50 45 35 60  -> after swapping  50 and 35 the array will be sorted -> 10 20 30 35 45 50 60
 
-10 20 30 25 40 50 60 -> after swapping  30 and 25 the  array will be sorted  -> 10 20 25 30 40 50 60
-
-*/
-
-// how do we get these two values
-
-void func(int arr[],int n)
+unordered_map<string,int>ump;
+bool isScramble(string a , string b)
 {
-    int prv = INT_MIN, first=-1 , second=-1;
-
-    for(int i=0;i<n;i++)
-    {
-        if(arr[i] < prv)
-        {
-            if(first == -1)
-            {
-                first  = prv  ;
+     if(a==b) return true;
+        if(a.length() != b.length()) return false;
+        if(a.length() <= 1) return false;
+        
+        int n = a.length();
+        for(int i=1;i<=n-1;i++)
+        {   string s1 = a.substr(0,i) , s2 = b.substr(n-i,i) , s3 = a.substr(i,n-i) , s4 =  b.substr(0,n-i);
+           if(ump.find(s1+" "+s2) == ump.end())
+           {
+               ump[s1+" "+s2]  = (int)isScramble(s1,s2);
+           }
+           int x = ump[s1+" "+s2];
+          
+          if(ump.find(s3+" "+s4) == ump.end())
+           {
+               ump[s3+" "+s4]  = (int)isScramble(s3,s4);
+           }
+           int y =  (int)ump[s3+" "+s4];
+           
+           
+           if(x==y==1) return true;
+           
+           else
+            { 
+                s2 = b.substr(0,i) , s4 = b.substr(i,n-i);
+            if(ump.find(s1+" "+s2) == ump.end())
+           {
+               ump[s1+" "+s2]  = (int)isScramble(s1,s2);
+           }
+           int x = ump[s1+" "+s2];
+          
+          if(ump.find(s3+" "+s4) == ump.end())
+           {
+               ump[s3+" "+s4]  = (int)isScramble(s3,s4);
+           }
+           int y = (int)ump[s3+" "+s4];
+           
+           if(x==y==1) return true;
             }
-            else 
-            second = -1;
         }
-        prv = arr[i];
-    }
+        
+        return false;
+
 }
 
-// we can modify the above function For BST also.
 
-
-
-void  FixBst(node*root)
-{
-    node*pr
-}
 int main()
 {
-    int n; cin>>n;
-    int arr[n];
-    for(auto &it:arr) cin>>it;
-    f(arr,n);
-    for(auto it:arr) cout<<it<<" ";
+    string a , b; 
+    cin>>a;
+    cin>>b;
 
-    return 0;
+    if(isScramble(a,b)) cout<<"YES\n";
+    else cout<<"NO\n";
+
+
+return 0;
 }
