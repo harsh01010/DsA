@@ -23,54 +23,39 @@ void traverse(node *root)
     traverse(root->right);
 }
 
-// vertical traversal in Binary tree
+// top view of bst 
 /*
-use horizontal distance , level order traversal and map
-use horezontal distance as key and a vector as value , if hd already present the push_back root->data into it's value
+ store of distance of each node from root node in a map using level order traversal , now traverse the map
  */
-
-void print(node*root)
+void print(node*root,int y)
 {
-    map<int,vector<int>>mp;
-    queue<pair<int,node*>>q;
+    map<int,node*>ump; // map will be sorted in order of the keys here keys we be horizontal distances so this solution also works for TREEs.
+    queue< pair<int,node*>>q;
     q.push({0,root});
     while(!q.empty())
     {
-        int x = q.size();
+        int x= q.size();
+
         for(int i=0;i<x;i++)
         {
-            pair<int,node*>p = q.front();
+            pair<int,node*>y  = q.front();
             q.pop();
-            if(mp.find(p.first) != mp.end())
-            {       
-                vector<int>temp = mp[p.first];
-                temp.push_back(p.second->data);
-                mp[p.first] = temp;
-            }
-            else
-            {
-                // vector<int>temp;
-                // temp.push_back(p.second->data);
-            mp[p.first].push_back(p.second->data);
-            }
+            if(ump.find(y.first) == ump.end())
+            ump[y.first] = y.second;
 
-            if(p.second->left)
-            q.push({p.first-1,p.second->left});
-            if(p.second->right)
-            q.push({p.first+1 , p.second->right});
+            if(y.second->left)
+            q.push( {y.first-1,y.second->left});
+            if(y.second->right)
+            q.push({y.first+1,y.second->right});
         }
-        //return res;
     }
-    //vector<int>res;
-        for(auto it:mp)
-        {
-            for(auto i:it.second)
-            {
-                // res.push_back(i)
-                cout<<i<<" ";
-            }
-        }
+
+    for(auto it:ump)
+    {
+        cout<<it.second->data<<" ";
+    }
 }
+
 int main()
 {
 
@@ -96,7 +81,7 @@ int main()
                                            80
     */
 
-   print(root);
+   print(root,0);
 
     return 0;
 }

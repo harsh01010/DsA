@@ -23,16 +23,15 @@ void traverse(node *root)
     traverse(root->right);
 }
 
-// vertical traversal in Binary tree
+// vertical sum
 /*
-use horizontal distance , level order traversal and map
-use horezontal distance as key and a vector as value , if hd already present the push_back root->data into it's value
+use horizontal distances as keys of map and sum root data of equal horizontal diatances
  */
 
-void print(node*root)
+void print(node *root)
 {
-    map<int,vector<int>>mp;
-    queue<pair<int,node*>>q;
+    map<int, int> mp;
+    queue<pair<int, node *>> q;
     q.push({0,root});
     while(!q.empty())
     {
@@ -41,35 +40,18 @@ void print(node*root)
         {
             pair<int,node*>p = q.front();
             q.pop();
-            if(mp.find(p.first) != mp.end())
-            {       
-                vector<int>temp = mp[p.first];
-                temp.push_back(p.second->data);
-                mp[p.first] = temp;
-            }
-            else
-            {
-                // vector<int>temp;
-                // temp.push_back(p.second->data);
-            mp[p.first].push_back(p.second->data);
-            }
-
-            if(p.second->left)
+            mp[p.first] += p.second->data;
+            if(p.second->left) 
             q.push({p.first-1,p.second->left});
             if(p.second->right)
-            q.push({p.first+1 , p.second->right});
+            q.push({p.first+1,p.second->right});
         }
-        //return res;
     }
-    //vector<int>res;
-        for(auto it:mp)
-        {
-            for(auto i:it.second)
-            {
-                // res.push_back(i)
-                cout<<i<<" ";
-            }
-        }
+
+    for(auto it:mp)
+    {
+        cout<<it.second<<" ";
+    }
 }
 int main()
 {
@@ -96,9 +78,7 @@ int main()
                                            80
     */
 
-   print(root);
+    print(root);
 
     return 0;
 }
-
-
