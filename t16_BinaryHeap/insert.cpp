@@ -16,8 +16,6 @@ public:
     int parent(int i) { return (i - 1) / 2; }
     bool insert(int);
     void traverse();
-    void Minhepify(int);
-    int extract();
 };
 
 bool MinHeap ::insert(int x)
@@ -44,36 +42,6 @@ void MinHeap::traverse()
         cout << arr[it] << " ";
     cout << "\n";
 }
-void MinHeap::Minhepify(int i){
-    int li = left(i);
-    int ri = right(i);
-    int smallest = i;
-    if (li < size && arr[smallest] > arr[li])
-        smallest = li;
-    if (ri < size && arr[smallest] > arr[ri])
-        smallest = ri;
-    if (smallest != i)
-    {
-        swap(arr[i], arr[smallest]);
-        Minhepify(smallest);
-    }
-}
-// get minimum and extract:
-/*
-get minimum -> O(1) -> arr[0]
-extract -> delete minimum element.
-first swap arr[0](minimum) and arr[size-1] and do size--.
-then call hepify(0)
-*/
-int MinHeap::extract(void)
-{
-    if(size==0) return INT_MIN;
-    if(size==1){size--;return arr[0];}
-    swap(arr[0],arr[size-1]);
-    size--;
-    Minhepify(0);
-    return arr[size];
-}
 
 int main()
 {
@@ -86,6 +54,7 @@ int main()
     hp.insert(25);
     hp.insert(45);
     hp.insert(12);
+    hp.traverse();
     hp.traverse();
 
     return 0;

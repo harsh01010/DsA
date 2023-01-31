@@ -17,7 +17,6 @@ public:
     bool insert(int);
     void traverse();
     void Minhepify(int);
-    int extract();
 };
 
 bool MinHeap ::insert(int x)
@@ -44,7 +43,9 @@ void MinHeap::traverse()
         cout << arr[it] << " ";
     cout << "\n";
 }
-void MinHeap::Minhepify(int i){
+//MinHepify -> if there is one invalid element(at index i) in heap that is it's value is greater than it's decendants then we need MinHepify to fix this.
+void MinHeap::Minhepify(int i)
+{
     int li = left(i);
     int ri = right(i);
     int smallest = i;
@@ -58,23 +59,6 @@ void MinHeap::Minhepify(int i){
         Minhepify(smallest);
     }
 }
-// get minimum and extract:
-/*
-get minimum -> O(1) -> arr[0]
-extract -> delete minimum element.
-first swap arr[0](minimum) and arr[size-1] and do size--.
-then call hepify(0)
-*/
-int MinHeap::extract(void)
-{
-    if(size==0) return INT_MIN;
-    if(size==1){size--;return arr[0];}
-    swap(arr[0],arr[size-1]);
-    size--;
-    Minhepify(0);
-    return arr[size];
-}
-
 int main()
 {
     MinHeap hp(10);
@@ -86,6 +70,8 @@ int main()
     hp.insert(25);
     hp.insert(45);
     hp.insert(12);
+    hp.traverse();
+    hp.Minhepify(0);
     hp.traverse();
 
     return 0;
