@@ -35,6 +35,9 @@ bool MinHeap ::insert(int x)
         i = parent(i);
     }
     return true;
+    /*
+    decreseKey(size++,x); one line
+    */
 }
 void MinHeap::traverse()
 {
