@@ -53,13 +53,14 @@ pair<int,int> PairSum(node*root,int sum)
 
 /*
 method 2:
-use set , and  check if the sum - root data is arleady present then return true.
+use set , and  check if the sum - root data is arleady present then return true. 
+this approach can be used on a normal binary tree also
 */
 bool f(node*root,unordered_set<int>&st,int sum)
 {
     if(root==NULL) return false;
     if(f(root->left,st,sum)) return true;
-    if( st.find(abs(root->data-sum)) != st.end()) return true;
+    if( st.find(root->data-sum) != st.end()) return true;
     else st.insert(root->data);
     return (f(root->right,st,sum));
 }

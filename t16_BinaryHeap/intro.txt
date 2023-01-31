@@ -1,0 +1,57 @@
+
+        Binary Heap
+    used in :
+        Heapsort
+        in inplementation of priority queue
+
+    Types:
+        Min heap(highest priority item is assigned lowest value)
+        Max Heap(highest priority item is assigned highest value)
+
+advantages:
+it's cache friendly we can have random access
+it's complete binary tree 
+*********************************************************************************************************************************
+
+Binary heap is a complete Binary tree (stored as an array):
+
+                                10
+                              /   \ 
+                             20    30
+                           /   \   /    
+                          40   50  60
+
+                ind:   0  1  2  3  4  5
+                     10  20  30  40 50 60   
+                 we can find left right and parent at ith index by the formula:
+                 left(i) = 2i+1
+                 right(i) = 2i+2
+                 parent(i) = floor(i-1)/2  
+
+******************************************************************************************************************************************************************
+Min Heap:
+    complete binary tree
+    every node has value smaller than its descendants.
+
+                                10
+                              /   \ 
+                             20    30
+                           /   \   /    
+                          40   50  60
+
+                          10  20  30  40 50 60   
+Max Heap:
+    complete binary tree
+    every node has value greater thant it's descendants.
+*********************************************************************************************************************************************************************************
+// class for binary heap
+class MinHeap{
+    int *arr;
+    int size;
+    int capacity;
+    MinHeap(int c): arr(new int[c]) , size(0) , capacity(c) {}
+
+    int left(int i){return 2*i+1;}
+    int right(int i){return 2*i+2;}
+    int parent(int i){return (i-1)/2;}
+};
