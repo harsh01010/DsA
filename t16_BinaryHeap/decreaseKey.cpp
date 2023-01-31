@@ -19,8 +19,6 @@ public:
     void Minhepify(int);
     int extract();
     void decreaseKey(int,int);
-    void deleteKey(int);
-    void buildHeap();
 };
 
 bool MinHeap ::insert(int x)
@@ -47,30 +45,8 @@ void MinHeap::traverse()
         cout << arr[it] << " ";
     cout << "\n";
 }
-void MinHeap::Minhepify(int i){
-    int li = left(i);
-    int ri = right(i);
-    int smallest = i;
-    if (li < size && arr[smallest] > arr[li])
-        smallest = li;
-    if (ri < size && arr[smallest] > arr[ri])
-        smallest = ri;
-    if (smallest != i)
-    {
-        swap(arr[i], arr[smallest]);
-        Minhepify(smallest);
-    }
-}
-int MinHeap::extract(void)
-{
-    if(size==0) return INT_MIN;
-    if(size==1){size--;return arr[0];}
-    swap(arr[0],arr[size-1]);
-    size--;
-    Minhepify(0);
-    return arr[size];
-}
 
+// decrease the key at index i with x
 void MinHeap::decreaseKey(int i,int x)
 {
     if(i<size)
@@ -84,42 +60,18 @@ void MinHeap::decreaseKey(int i,int x)
     }
 }
 
-void MinHeap::deleteKey(int i)
-{
-    if(i<size){
-        decreaseKey(i,INT_MIN);
-        extract();
-    }
-
-}
-/*
-build heap:
-
-start with bottom most right most node -> that is parent  of last node -> parent(size-1) -> ((size-1)-1 )/2 -> (size-2)/2
-and hepify each index upto 0
-
-why we are starting form bottom most right most node -> because we are assured that at the lowest level we need not to do any changes 
-*/
-void MinHeap::buildHeap()
-{
-    for(int i = (size-1-1)/2 ; i>=0;i--)
-        Minhepify(i);
-}
-
-
-
 
 int main()
 {
     MinHeap hp(10);
-    int n; cin>>n;
-    for(int i = 0;i<n;i++)
-    {
-        cin>>hp.arr[i];
-        hp.size++;
-    }
-    hp.traverse();
-    hp.buildHeap();
+    hp.insert(10);
+    hp.insert(20);
+    hp.insert(15);
+    hp.insert(40);
+    hp.insert(50);
+    hp.insert(25);
+    hp.insert(45);
+    hp.insert(12);
     hp.traverse();
 
     return 0;

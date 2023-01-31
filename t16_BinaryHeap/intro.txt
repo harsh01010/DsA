@@ -27,6 +27,7 @@ Binary heap is a complete Binary tree (stored as an array):
                  left(i) = 2i+1
                  right(i) = 2i+2
                  parent(i) = floor(i-1)/2  
+                 height = log(n)
 
 ******************************************************************************************************************************************************************
 Min Heap:

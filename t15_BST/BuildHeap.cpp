@@ -14,33 +14,10 @@ public:
     int left(int i) { return 2 * i + 1; }
     int right(int i) { return 2 * i + 2; }
     int parent(int i) { return (i - 1) / 2; }
-    bool insert(int);
     void traverse();
     void Minhepify(int);
-    int extract();
-    void decreaseKey(int,int);
-    void deleteKey(int);
     void buildHeap();
 };
-
-bool MinHeap ::insert(int x)
-{
-    if (size > capacity)
-        return false;
-    if (size == 0)
-    {
-        arr[size++] = x;
-        return true;
-    }
-    int i = size;
-    arr[size++] = x;
-    while (i >= 1 && arr[parent(i)] > arr[i])
-    {
-        swap(arr[i], arr[parent(i)]);
-        i = parent(i);
-    }
-    return true;
-}
 void MinHeap::traverse()
 {
     for (int it = 0; it < size; it++)
@@ -61,37 +38,7 @@ void MinHeap::Minhepify(int i){
         Minhepify(smallest);
     }
 }
-int MinHeap::extract(void)
-{
-    if(size==0) return INT_MIN;
-    if(size==1){size--;return arr[0];}
-    swap(arr[0],arr[size-1]);
-    size--;
-    Minhepify(0);
-    return arr[size];
-}
 
-void MinHeap::decreaseKey(int i,int x)
-{
-    if(i<size)
-    {
-        arr[i] = x;
-        while(i>=1 && arr[i] < arr[parent(i)])
-        {
-            swap(arr[i],arr[parent(i)]);
-            i=parent(i);
-        }
-    }
-}
-
-void MinHeap::deleteKey(int i)
-{
-    if(i<size){
-        decreaseKey(i,INT_MIN);
-        extract();
-    }
-
-}
 /*
 build heap:
 
@@ -104,6 +51,8 @@ void MinHeap::buildHeap()
 {
     for(int i = (size-1-1)/2 ; i>=0;i--)
         Minhepify(i);
+
+    // this function has time complexity O(n) not o(nlogn) because of the fact that complete binary tree has height ciel(n/2^(n+1))
 }
 
 
