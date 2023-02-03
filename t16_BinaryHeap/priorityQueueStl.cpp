@@ -19,7 +19,7 @@ top(): This function returns a reference to the top most element of the queue.
 push(): The push(g) function adds the element ‘g’ at the end of the queue.
 pop(): The pop() function deletes the first element of the queue.
 swap(): This function is used to swap the contents of one priority queue with another priority queue of same type and size.
-
+Priority Queue allows duplicate values.
 push , pop -> O(log(n))
 empty , size,top -> o(1)
 
