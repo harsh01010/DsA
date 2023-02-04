@@ -1,0 +1,96 @@
+/*
+        Graph introduction:
+
+    -> Graph is a Set of : set of vertices and set of edges.
+        G = {v,E}
+        v = {v1,v2,v3...}
+        E = {e1,e2,e3,e4...}
+    
+    -> Directed Graph:
+    the Directed graphs are such graphs in which edges are directed in a single direction.
+    
+    In Directed graph there are two type of degrees associated to each vertex:
+    indegree and outdegree
+
+    sum of indegree = |E|
+    sum of outdegree = |E|
+
+    maximum number of edges = |v|*(|v|-1)
+
+    -> Undirected Graph:
+    Undirected graphs are such graphs in which the edges are directionless.
+    
+    sum of degree = 2*|E|
+    maximum edges = (|v|*(|v|-1) )/2
+
+    -> Walk: sequence of vertices and edges such that we can repeat vertices and edges.
+    -> Trail: sequence of vertices and edges such that we can repeat vertices but not repeat edges.
+    -> Path: sequence of vertices and edges such that we cannot repeat vertices and edges.
+
+    ->Cyclic Graph : if a closed walk exists.
+    ->Acyclic:
+        1            1---->2
+      /   \          ^     ^
+     2     3         |     |  
+                     4<----3
+    
+    graph contaning no cycle is also a tree.
+
+    ->Weighted Graph: Weight assigned to edges.
+
+
+*/
+
+/*
+            Graph Representation
+
+    1.Adjacency matrix:
+    matrix of size V*V
+                  
+                    1  if there is a edge between i and j
+    matrix[i][j]  = 
+                    0 otherwise
+
+    -> for undirected graph the adjacency matrix is a symmetric matrix.
+        e.g. 
+                0------1
+                |      |     -->       0 1 2 3 
+                |      |             0 0 1 0 1 
+                3------2             1 1 0 1 0
+                                     2 0 1 0 1
+                                     3 1 0 1 0
+
+    How to handle vertices with arbitarary names -> create array of strings , hashmaps
+
+    space required: theeta(V*V)
+
+    operations:
+    check if two vertices are adjacent -> theeta(1)
+    find all vertices adfacent to u   -> theeta(V)
+    findfind degree of u -> theeta(V)
+    add/remove a verted -> theeta(v^2)
+
+    2.Adjacency list:
+    an array of list , list may be a dynamic size array or linked list
+               
+                0------1
+                |      |     -->       
+                |      |             0 1 3
+                3------2             1 0 2
+                                     2 1 3
+                                     3 0 2
+    
+    space required: theeta(V+E) -> for undirected theeta(V+2*E), for directed theeta(V+E)
+
+    operations:
+
+    check if there is edge between u and v -> theeta(V)
+    find all vertices adfacent to u   -> theeta(degree(u))
+    findfind degree of u -> theeta(1)
+    add a verted -> theeta(1)
+    remove a verted -> theeta(V)
+
+
+*/
+
+
