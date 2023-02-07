@@ -9,7 +9,9 @@
         "string_view": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp"
     },
     "liveServer.settings.port": 5501
 }
