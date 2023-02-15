@@ -2,65 +2,51 @@
 typedef long long int ll;
 using namespace std;
 
+
 /*
-7
-5
-0 1
-2 3
-4 5
-5 6
-4 6
+detect cycle in diretced graph:
+    the idea which have been used to detect cycle in directed graph is not going to work here because 
+    of such cases:  1-->2<--3 , here 2 will be already visited when we will call for 3 but it does not forms cycle.
+
+    so we will use another array of 0 ,1 which will check wether the neighbour is in recurssion stack or not.
 */
 
-void DFS(vector<int>arr[],int i,int visited[],int &cmpCnt)
+bool DFS(vector<int>adj[],int src,int vis[],int resSt[])
 {
-    if(visited[i]==1) return;
-    visited[i] = 1;
-    cmpCnt++;
-    for(auto it:arr[i])
+    vis[src] = 1;
+    resSt[src] = 1;
+    for(auto it:adj[src])
     {
-        DFS(arr,i,visited,cmpCnt);
+        if(!vis[it])
+        {
+            if(DFS(adj,it,vis,resSt)) return true;
+        }
+        else if(resSt[it]) return true; // it should be in the curret rec. stack
     }
-
+    resSt[src] = 0; // source will be poped form recur. stack.
+    return false;
 }
 
-int possiblePairs(vector<pair<int,int>>same,int n,int c)
+bool cycleDfs(vector<int>adj[],int v)
 {
-    vector<int>arr[n];
-    for(int i=0;i<c;i++)
-    {   
-        arr[same[i].first].push_back (same[i].second);
-        arr[same[i].second].push_back(same[i].first);
-        
-    }
-    int  visited[n] = {0};
+    int vis[v] = {0};
+    int resSt[v] = {0};
 
-    int cmpCnt=0;
-    vector<int>cntArr;
-    for(int i=0;i<n;i++)
+    for(int i=0;i<v;i++)
     {
-        if(!visited[i])
-        {DFS(arr,i,visited,cmpCnt);
-        cntArr.push_back(cmpCnt);
-        cmpCnt=0;}
+        if(!vis[i])
+        {
+            if(DFS(adj,i,vis,resSt)) return true;
+        }
     }
-    long long int ans=0;
+    return false;
 }
 int main()
 {
-
-    int n;
-    int c;
-    vector<pair<int,int>>same;
-    cin>>n>>c;
-    for(int i=0;i<c;i++)
-    {
-        pair<int,int>p;
-        cin>>p.first>>p.second;
-        same.push_back(p);
-    }
-
-
+    #ifndef ONLINE_JUDGE
+    freopen("i_p.txt", "r", stdin);
+    freopen("o_p.txt", "w", stdout);
+    #endif
 
     
 
