@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 typedef long long int ll;
 using namespace std;
-
+//replace O with X
 bool valid(int x, int y, int n, int m)
 {
     return x >= 0 && y >= 0 && x < n && y < m;
