@@ -3,7 +3,7 @@ typedef long long int ll;
 using namespace std;
 
 /*
-Topological sorting :- 
+Topological sorting :-  (only for Acyclic graph)
             0
         /       \ 
         1       2 

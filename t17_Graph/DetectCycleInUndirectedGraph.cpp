@@ -4,7 +4,7 @@ using namespace std;
 
 // detect cycle in undirected graph
 /*
-if a node is aleady visited then it must contain cycle if it requres to visit again untill it is not parent of cuurent node.
+if a node is aleady visited then it must contain cycle if it requres to visit again untill it is not parent of current node.
 */
 // using DFS
 bool DFS(vector<int> arr[], int vis[], int src, int parent)
