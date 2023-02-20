@@ -4,6 +4,9 @@ using namespace std;
 
 // floyd warshall algorithm to find sortest path between every pair of vertex
 
+/*
+    -> first create directly reachable matrix , then use arr[i][j] = arr[i][k] + arr[k][j] and take minimum of previous value and this value.
+*/
 vector<vector<int>> warshall(vector<pair<int,int>>*arr,int n)
 {
     vector<vector<int>>res(n,vector<int>(n,1e8));
