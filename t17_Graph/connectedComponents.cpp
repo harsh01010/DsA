@@ -26,7 +26,7 @@ void Components(vector<int>*arr,int n)
         {
             preorder(arr,i,st,currComp);
             totalComp++;
-            cout<<"number of vertices in 1st component:- "<<currComp<<"\n";
+            cout<<"number of vertices in "<<i<<" no. component:- "<<currComp<<"\n";
             currComp=0;
         }
 
