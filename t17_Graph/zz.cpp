@@ -22,7 +22,7 @@ void topo(vector<int>arr[],int n)
     {
         int x = q.front(); q.pop();
         cout<<x<<" ";
-        for(auto it:arr[x])
+        for(auto it:arr[x]) 
         {
             indeg[it]--;
             if(indeg[it]==0)
