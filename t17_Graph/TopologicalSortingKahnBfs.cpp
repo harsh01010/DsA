@@ -51,6 +51,7 @@ void topological(vector<int> arr[], int n)
     while (!q.empty())
     {
         int u = q.front();
+        cout<<u<<" ";
         q.pop();
         cout << u << " ";
         for (auto it : arr[u])
