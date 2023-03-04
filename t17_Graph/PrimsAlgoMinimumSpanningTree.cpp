@@ -3,7 +3,7 @@ typedef long long int ll;
 using namespace std;
 
 /*
-Minimum spanning tree using prim's algorithm:
+Minimum spanning tree using prim's algorithm:(graph must be weighted, undirected and connected)
 
 spanning tree: it is a subgraph of given graph which is a tree , such that it contains all vertices,since it is a tree it contains exactly v-1 edges.
 Minimum spanning tree:
@@ -36,8 +36,8 @@ int minimumCost(vector<vector<int>>&adj,int v)
 
     for(int i=0;i<v;i++)
     {
-        int u = -1;
-        // finding the least weight edege in current mst
+        int u = -1;// u will be inserted in mst
+        // finding the least weight edege in graph which is connected to an vertex in mst.
         for(int j=0;j<v;j++)
         {
             if(!currMst[i] &&(u==-1 or key[u]<key[i]))
