@@ -36,7 +36,7 @@ void mergeSort(int arr[],int l,int h)
         mergeArr(arr,l,m,h);
     }
 }
-
+              
 int main()
 {
 
@@ -50,7 +50,7 @@ int main()
       for(int i=0;i<n;i++) cout<<arr[i]<<" ";
 
 
-
+  
 
 return 0;
 }

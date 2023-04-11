@@ -13,7 +13,7 @@ using namespace std;
  Stable:- bubble , insertion , merge
  Unstable:- selection,quick , heap
 */
-
+                                                  
 void bubble_sort(int arr[], int n)
 {
        for (int i = 0; i < n - 1; i++)
@@ -22,7 +22,7 @@ void bubble_sort(int arr[], int n)
               for (int j = 0; j < n - i - 1; j++)
               {
                      if (arr[j] > arr[j + 1])
-                     {
+                    {
                             swap(arr[j], arr[j + 1]);
                             swapped = true;
                      }

@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 typedef long long int ll;
 using namespace std;
-
 /*
     BFS :
     for TREE -> level order traversal
@@ -12,11 +11,10 @@ void BFS(vector<int> arr[], int v, int s = 0) // s = source -> s = 0
 
     unordered_map<int, bool> ump; // we can create an array also where indices will represent vertex and place a boolean value at arr[i].
     for (int i = 0; i < v; i++)
-        ump[i] = false;
-
+        ump[i] = false;  
     queue<int> q;
     q.push(s);
-    ump[s] = true;
+    ump[s] = true;     
     while (q.size())
     {
         int x = q.front();
@@ -32,7 +30,6 @@ void BFS(vector<int> arr[], int v, int s = 0) // s = source -> s = 0
         }
     }
 }
-
 // for disconnected graph (works on connected as well)
 
 void BFS2(vector<int> arr[], unordered_map<int, bool> &ump, int s = 0) // s = source -> s = 0

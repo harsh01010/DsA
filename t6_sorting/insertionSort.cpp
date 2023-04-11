@@ -23,7 +23,7 @@ void sort_insert(int arr[], int n)
      }
 }
 int main()
-{
+{                                                                    
 
      int n;
      cin >> n;
