@@ -1,0 +1,30 @@
+/*
+At every step, we can make a choice that looks best at the moment, and we get the optimal solution of the complete problem.
+
+
+getOptimal(item arr[],int n)
+{
+    res=0
+    while(all items are not considered)
+    {
+        i=selectItem()
+        if(feasible(i))
+            res=res+i
+    }
+    return res
+}
+
+applications:
+    activity slection
+    fractional knapsack
+    job sequencing
+    prim's algorithm
+    kruskal's algorithm
+    Dijkstra algorithm
+    huffman coding
+
+    finding colse to optimal solutions for NP hard problems like travelling salesman problem.
+
+    greedy does not work always.
+
+*/
