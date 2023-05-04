@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
   // multidimensional array  in c++
   /*
    2d array :- arr[2][2] = {{1 ,2},
