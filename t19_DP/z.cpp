@@ -1,87 +1,45 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 typedef long long int ll;
 using namespace std;
 
-int frog_jump_(vector<int>arr,int i)
+int f(string s, string ss)
 {
-    if(i==0)
-        return 0;
-    int left = frog_jump_(arr,i-1) + abs(arr[i]-arr[i-1]);
-    int right = left;
-    if(i>1)
-        right = frog_jump_(arr,i-2) + abs(arr[i]-arr[i-2]);
-    
-    return min(right,left);
-}
-int frog_jump(vector<int>arr)
-{
-    return frog_jump_(arr,arr.size()-1);
-}
+    unordered_map<char, int> mp1, mp2;
+    unordered_set<char> st;
+    for (auto it : s)
+    {    mp1[it]++; st.insert(it); }
+    for (auto it : ss)
+    {   mp2[it]++; st.insert(it); }
 
-//memoization
-
-int frogJumpMemoiz_(vector<int>arr,vector<int>&dp,int i)
-{
-    if(dp[i] == -1)
+    int res = 0;
+    for(auto it:st)
     {
-        if(i == 0)
-            return dp[i] = 0;
-        int left = frogJumpMemoiz_(arr,dp,i-1) + abs(arr[i]-arr[i-1]);
-        int right = left;
-        if(i>1) 
-            right = frogJumpMemoiz_(arr,dp,i-2) + abs(arr[i] - arr[i-2]);
-        
-        dp[i] = min(right,left);
+        if(mp1.find(it) != mp1.end())
+        {
+            if(mp2.find(it) != mp2.end())
+            { cout<<max(mp1[it],mp2[it])<<"\n";    res += max(mp1[it],mp2[it]);}
+            else
+            {   cout<<mp1[it]<<"\n";    res += mp1[it];}
+        }
+        else
+            res += mp2[it];
     }
-    return dp[i];
-}
-int frogJumpMemoiz(vector<int>arr)
-{
-    vector<int>dp(arr.size(),-1);
-    return frogJumpMemoiz_(arr,dp,arr.size()-1);
 
-}
-//Tabulation
-
-int tab(vector<int>arr)
-{
-    int n = arr.size();
-    vector<int>dp(n,-1);
-    dp[0] = 0;
-    dp[1] = abs(arr[0]-arr[1]);
-
-    for(int i =2;i<n;i++)
-    {
-        dp[i] = min(dp[i-1]+abs(arr[i]-arr[i-1]) , dp[i-2]+abs(arr[i]-arr[i-2]));
-    }
-    return dp[n-1];
-}
-
-
-//space optimzed
-int optimiz(vector<int>arr)
-{
-    int n = arr.size();
-    int curr = abs(arr[0]-arr[1]);
-    int prev = 0;
-
-    for(int i =2 ;i<n;i++)
-    {    int temp = curr;
-        curr = min(curr+abs(arr[i]-arr[i-1]) , prev+abs(arr[i]-arr[i-2]));
-        prev = temp;}
-
-    return curr;
     
+    
+    return res;
+    
+    
+
+    
+    return res;
 }
+
 int main()
 {
-    
-    vector<int>arr = {10,20,10,30,40,60,50};
-    //int res = frogJumpMemoiz(arr);
-    int res = optimiz(arr);
-    cout<<res<<"\n";
+    string s, ss;
+    cin >> s >> ss;
+    cout << f(s, ss) << "\n";
 
-
-
-return 0;
+    return 0;
 }
