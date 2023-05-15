@@ -1,37 +1,68 @@
-#include<bits/stdc++.h>
-typedef long long int ll;
+#include <bits/stdc++.h>
 using namespace std;
 
-int fibRec(int n)
+int calc(int n)
 {
-    if(n==0||n==1)
-        return n;
-    int x = fibRec(n-1) + fibRec(n-2);
-    return x;
+    return n * (n - 1) / 2;
 }
 
-int fibOptimized(int n)
+void dfs(vector<int> graph[], int i, int &x, vector<int> &vis)
 {
-    int x = 0, y = 1;
-    for(int i = 2; i<=n;i++)
+    x += 1;
+    for (auto it : graph[i])
     {
-        int t = y;
-        y += x;
-        x = t;
+        if (!vis[it])
+        {
+            vis[it] = 1;
+            dfs(graph, it, x, vis);
+        }
     }
-    return y;
 }
 
+void fun(vector<int> graph[], int n)
+{
+    vector<int> vis(n, 0);
+    vector<int> temp;
+    int x = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (!vis[i])
+        {
+            cout<<i<<":\n";
+            dfs(graph, i, x, vis);
+            cout<<x<<"\n";
+            temp.push_back(x-1);
+            x=0;
+        }
+    }
+
+    int sum = 0;
+    for (auto it : temp)
+    {
+        cout << it << " ";
+    }
+    for (int i = 0; i < temp.size(); i++)
+    {
+        sum *= calc(temp[i]);
+    }
+    cout << sum << "\n";
+}
 
 int main()
 {
-    int n;
-    cin>>n;
 
-    cout<<"using the 2nd funcion: "<<fibOptimized(n)<<"\n";
-    cout<<"using the 1st function: "<<fibRec(n)<<"\n";
+    int n, k;
+    cin >> n >> k;
+    vector<int> arr[n];
+    for (int i = 0; i < k; i++)
+    {
+        int x, y;
+        cin >> x >> y;
+        arr[x].push_back(y);
+        arr[y].push_back(x);
+    }
 
+    fun(arr, n);
 
-
-return 0;
+    return 0;
 }
