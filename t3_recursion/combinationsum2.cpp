@@ -1,42 +1,39 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 typedef long long int ll;
 using namespace std;
 
-int getAns(int n)
-{
-  if(n/10==0)
-    return n;
-  int s = 0;
-  while(n)
-  {
-    s += n%10; n/= 10;
-  }
-  return getAns(s);
-    
-}
-
-int superDigit(string n, int k) {
-  
-  int num = 0;
-  for(auto it:n)
-    {num += (int)(it - '0');}
-   cout<<num<<'\n'; 
-  num *= k;
-  cout<<"pass\n";
- cout<<num<<"\n";
-  
-  return getAns(num);
-  
-}
-
+void f(vector<int>arr,int i,vector<int>&temp,vector<vector<int>>&res,int sum,int target)
+    {
+        if(target == sum)
+        {
+            res.push_back(temp);
+             return;
+           
+        }
+        if(sum>target) return;
+        if(i==arr.size())
+         return;
+            temp.push_back(arr[i]);
+            f(arr,i+1,temp,res,sum+arr[i],target);
+            temp.pop_back();
+            while(i+1<arr.size() && arr[i]==arr[i+1]) i++;
+            f(arr,i+1,temp,res,sum,target);
+    }
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        vector<int>temp;
+        vector<vector<int>>res;
+        int i= 0;
+        int sum = 0;
+        sort(candidates.begin(),candidates.end());
+        f(candidates,i,temp,res,sum,target);
+        return res;
+    }
 int main()
 {
-    
-    string s; int k; 
-    cin>>s>>k;
-    cout<<superDigit(s,k)<<"\n";
+  int target = 27;
+  vector<int>candidates = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+  combinationSum2(candidates,  target);
 
 
-
-return 0;
+  return 0;
 }
