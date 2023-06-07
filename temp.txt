@@ -1,4 +1,0 @@
-python program to find most repeated word in a file using file handling ,
-python is a programming language , python is dynamically typed.
-python is 2nd most popular programming language after javascript.
-python python python python
