@@ -41,6 +41,16 @@ int findWays(vector<int> &arr, int k)
     if (arr[0] <= sum)
         prev[arr[0]] = 1;
 
+    /*  if array contains zeros in starting
+       f(j==0)
+                {
+                    dp[i][j] = 1;
+                }
+                if(i==0 && arr[0] == j)
+                {
+                    dp[i][j]++;
+                }
+    */
     for (int i = 1; i < n; i++)
     {
         for (int j = 1; j <= sum; j++)
