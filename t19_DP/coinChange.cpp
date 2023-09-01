@@ -3,6 +3,7 @@ typedef long long int ll;
 using namespace std;
 
 /*
+coin change 1 -> return minimum number of coins that make up to given amout. , each coin of different denomination has infinite supply.
 use include and not include logic
 in case of infinite supply, don't go to next state in case of inlude. include and check other possibilities
 */
