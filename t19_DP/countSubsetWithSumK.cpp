@@ -12,6 +12,16 @@ int getAns(vector<int> arr, int i, int s, vector<vector<int>> &dp)
         return dp[i][s] = 0;
     }
 
+    /*
+    in case of starting zeros
+    if(i==0)
+    {
+        if(s==0 && arr[0] ==0) return 2;
+        if(s==0 || arr[0] == s) return 1;
+        return 0;
+    }
+    */
+
     if (dp[i][s] != -1)
         return dp[i][s] % 1000000007;
     int x = getAns(arr, i - 1, s, dp) % 1000000007;
