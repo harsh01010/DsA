@@ -6,6 +6,9 @@ using namespace std;
 subsequence:- order same , may or may not be contiguous
 
 pick or not pick
+
+if match -> 1 + i-1, j-1
+if not match -> max(i-1,j ,, i,j-1)
 */
 // recursion + memoization
 // index has been shifted 
