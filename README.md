@@ -1,24 +1,24 @@
 <h1 align="center">Complete Data Structure And Algorithm In C++</h1><hr/>
 
-- Basics of Git and Github : <a href="https://github.com/harsh01010/DsA/blob/master/0impStuff/GitAndGithub.txt" target="_blank">LINK</a>
-- C++ STL : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Mathematics : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Bit Manipulation : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Array : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Recursion : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Searching : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Sorting : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Matrix : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Hashing : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- String : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Linked List : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Stack : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Queue : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Deque : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Binary Tree : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Binary Search Tree : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Binary Heap : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Graph : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Greedy : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- Dynamic Programming : <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Basics Of Git And Github :</h4> <a href="https://github.com/harsh01010/DsA/blob/master/0impStuff/GitAndGithub.txt" target="_blank">LINK</a>
+- <h4>C++ STL :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Mathematics :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Bit Manipulation :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Array :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Recursion :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Searching :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Sorting :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Matrix :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Hashing :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>String :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Linked List :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Stack :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Queue :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Deque :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Binary Tree :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Binary Search Tree :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Binary Heap :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Graph :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Greedy :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Dynamic Programming :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
 <br/>
