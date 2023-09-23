@@ -23,3 +23,11 @@
 - <h4>Dynamic Programming :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
 <br/><hr/>
 
+<!-- <h2 align="center">Popular Problems</h2>
+<table>
+    <tr>
+    <td>Array</td>
+    <td>Linked List</td>
+    <td>Strings</td>
+    </tr>
+</table> -->
