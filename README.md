@@ -18,9 +18,9 @@
 - <h4>Binary Tree :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
 - <h4>Binary Search Tree :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
 - <h4>Binary Heap :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- <h4>Graph :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- <h4>Greedy :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
-- <h4>Dynamic Programming :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/0impStuff/STL" target="_blank">LINK</a>
+- <h4>Graph :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/t17_Graph" target="_blank">LINK</a>
+- <h4>Greedy :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/t18_Greedy" target="_blank">LINK</a>
+- <h4>Dynamic Programming :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/t19_DP" target="_blank">LINK</a>
 <br/><hr/>
 
 <!-- <h2 align="center">Popular Problems</h2>
