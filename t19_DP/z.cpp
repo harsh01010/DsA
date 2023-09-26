@@ -9,9 +9,16 @@ int main()
     int n; cin>>n;
     for(int i=0;i<n;i++)
     {
+        string x,y; 
+        
         fflush(stdin);
-        string x; getline(cin,x);
-        v.push_back(x);
+        getline(cin,x);
+        cout<<x.length()<<"\n";
+        for(auto it:x)
+        {    if(it!=' ')y.push_back(it);
+        
+        }
+        v.push_back(y);
         fflush(stdin);
     }
 
@@ -34,37 +41,20 @@ int main()
     operators.insert("*");
 
 
-    vector<string>ans;
+    //vector<string>ans;
     int oper=0,var=0,kwd=0;
-
+    cout<<v.size()<<"\n";
+    vector<string>ans;
+    
     for(auto it:v)
     {
-        string temp;
+        cout<<it<<"\n";
         for(auto i:it)
-        {  if(i==' ') 
-            {
-                ans.push_back(temp);
-                temp.clear();
-            }
-            if(delim.find(i)==delim.end())
-                temp.push_back(i);
-            else{
-                ans.push_back(temp);
-                ans.push_back(string(1,i));
-                temp.clear();
-            }
+        {
+
         }
     }
-
-    for(auto it:ans){ 
-        if(keywords.find(it) != keywords.end()) kwd++;
-        else if(operators.find(it) != operators.end()) oper++;
-        else var++;
-
-        cout<<it<<"\n";}
-
-        cout<<kwd<<" "<<oper<<" "<<var<<"\n";
-
+    
 
 
 

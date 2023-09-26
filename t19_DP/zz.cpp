@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
 
-    vector<vector<vector<int>>>dp(n,vector<vector<int>>)
 
 
 
