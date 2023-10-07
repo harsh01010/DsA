@@ -2,7 +2,7 @@
         Binary Heap
     used in :
         Heapsort
-        in inplementation of priority queue
+        in implementation of priority queue
 
     Types:
         Min heap(highest priority item is assigned lowest value)
