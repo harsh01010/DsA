@@ -74,6 +74,22 @@ void postorderIt(Node *root)
 {
 }
 
+
+// level order traversal
+
+void levelOrder(Node *root)
+{
+      if(root == nullptr) return;
+      queue<Node*>q;
+      q.push(root);
+      while(q.size())
+      {
+            Node *curr = q.front(); cout<<curr->data<<" ";   
+            q.pop();
+            if(curr->left) q.push(curr->left);
+            if(curr->right) q.push(curr->right);
+      }
+}
 int main()
 {
       Node *root = new Node(10);
@@ -103,18 +119,19 @@ int main()
 
       */
 
-      Inorder(root);
-      cout << "\n";
-      // InorderIt(root);
-      cout << "\n";
-      preorder(root);
-      cout << "\n";
-      // preorderIt(root);
-      cout << "\n";
-      postorder(root);
-      cout << '\n';
-      // postorderIt(root);
-      cout << "\n";
+      // Inorder(root);
+      // cout << "\n";
+      // // InorderIt(root);
+      // cout << "\n";
+      // preorder(root);
+      // cout << "\n";
+      // // preorderIt(root);
+      // cout << "\n";
+      // postorder(root);
+      // cout << '\n';
+      // // postorderIt(root);
+      // cout << "\n";
+      levelOrder(root);
 
       return 0;
 }
