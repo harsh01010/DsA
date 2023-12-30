@@ -1,6 +1,6 @@
 <h1 align="center">Complete Data Structure And Algorithm In C++</h1><hr/>
 
-- <h4>Basics Of Git And Github :</h4> <a href="https://github.com/harsh01010/DsA/blob/master/0impStuff/GitAndGithub.txt" target="_blank">LINK</a>
+- <h4>Basics Of Git And Github :</h4> <a href="https://github.com/harsh01010/DsA/blob/master/t00_impStuff/GitAndGithub.txt" target="_blank">LINK</a>
 - <h4>C++ STL :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/t00_impStuff/STL" target="_blank">LINK</a>
 - <h4>Mathematics :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/t01_mathematics" target="_blank">LINK</a>
 - <h4>Bit Manipulation :</h4> <a href="https://github.com/harsh01010/DsA/tree/master/t02_bitmagic" target="_blank">LINK</a>
