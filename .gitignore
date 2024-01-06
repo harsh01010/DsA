@@ -1,3 +1,5 @@
 *.exe
 .vs/
 .vscode/
+input.txt
+output.txt
