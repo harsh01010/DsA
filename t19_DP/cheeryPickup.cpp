@@ -57,6 +57,50 @@ int cherryPickup(vector<vector<int>> &grid)
     int res = func(0, 0, 0, 0, grid, dp);
     return res > 0 ? res : 0;
 }
+
+// cheery pickup 2
+bool isValid(int i, int j, int n, int m)
+{
+    return i >= 0 and j >= 0 and i < n and j < m;
+}
+int f(vector<vector<int>> &arr, int i, int j1, int j2, vector<vector<vector<int>>> &dp)
+{
+    int n = arr.size(), m = arr[0].size();
+    if (!isValid(i, j1, n, m) || !isValid(i, j2, n, m))
+        return int(-1e9);
+    if (dp[i][j1][j2] != -1)
+        return dp[i][j1][j2];
+    if (i == n - 1)
+    {
+        if (j1 == j2)
+            return arr[i][j1];
+        else
+            return arr[i][j1] + arr[i][j2];
+    }
+
+    int acc = 0;
+    if (j1 == j2)
+        acc += arr[i][j1];
+    else
+        acc += arr[i][j1] + arr[i][j2];
+    int res = 0;
+    for (int x = -1; x <= 1; x++)
+    {
+        for (int y = -1; y <= 1; y++)
+        {
+            res = max(res, f(arr, i + 1, j1 + x, j2 + y, dp));
+        }
+    }
+    return dp[i][j1][j2] = acc + res;
+}
+
+int cherryPickup(vector<vector<int>> &grid)
+{
+    vector<vector<vector<int>>> dp(grid.size(), vector<vector<int>>(grid[0].size(), vector<int>(grid[0].size(), -1)));
+
+    return f(grid, 0, 0, grid[0].size() - 1, dp);
+}
+
 int main()
 {
 
