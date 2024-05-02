@@ -8,6 +8,9 @@ using namespace std;
 /*
 count the total no of ith bits in all numbers of array , if the count is not a multiple of 3 , set ith bit in the res(initially res = 0).
 */
+/*
+another method using two buckets
+*/
 int singleNumber(vector<int> &nums)
 {
     int res = 0;
