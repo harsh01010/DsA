@@ -1,0 +1,91 @@
+/*
+   DEQUE IN C# (Using LinkedList or custom Deque)
+
+   Deque provides functionality of both stack and queue
+   C# doesn't have built-in Deque, but LinkedList<T> provides similar functionality
+   
+   LinkedList provides:
+   - AddFirst() / RemoveFirst()
+   - AddLast() / RemoveLast()
+   - Supports arbitrary insertion/deletion
+   
+   For true Deque behavior with random access, use LinkedList<T> or custom implementation
+*/
+
+DEQUE EQUIVALENT IN C#
+
+LinkedList<T> is used as Deque alternative in C#
+
+Syntax: LinkedList<int> deque = new LinkedList<int>();
+
+Methods and Operations:
+____________________________________________
+AddFirst(element) -> Add to front - O(1)
+______________________________________________
+
+____________________________________________
+AddLast(element) -> Add to back - O(1)
+___________________________________________
+
+RemoveFirst() -> Remove from front - O(1)
+
+RemoveLast() -> Remove from back - O(1)
+
+First -> Get front node - O(1)
+
+Last -> Get back node - O(1)
+
+Count -> Get number of elements - O(1)
+
+AddBefore(node, value) -> Insert before node - O(1)
+
+AddAfter(node, value) -> Insert after node - O(1)
+
+BIG DIFFERENCES FROM C++ DEQUE:
+
+1. LinkedList doesn't support random access like deque[] operator
+2. For random access deque functionality, use List<T> instead
+3. LinkedList uses nodes and provides O(1) insertion/deletion at both ends
+4. C++ deque supports random access, LinkedList doesn't
+5. LinkedList is doubly-linked, deque is array-based
+6. If you need random access, List<T> is better alternative
+
+EXAMPLE:
+
+LinkedList<int> deque = new LinkedList<int>();
+deque.AddLast(10);
+deque.AddLast(20);
+deque.AddLast(30);
+
+deque.AddFirst(5);   // Add to front
+deque.AddLast(50);   // Add to back
+
+foreach(int x in deque)
+    Console.WriteLine(x + " Front: " + deque.First.Value + " Back: " + deque.Last.Value);
+
+// Insert at position
+var node = deque.First;
+node = node.Next;
+deque.AddBefore(node, 15);
+
+deque.RemoveLast();   // Remove from back
+deque.RemoveFirst();  // Remove from front
+
+int size = deque.Count;
+
+if(deque.Count > 0)
+{
+    int front = deque.First.Value;
+    int back = deque.Last.Value;
+}
+
+Time Complexity:
+AddFirst() - O(1)
+AddLast() - O(1)
+RemoveFirst() - O(1)
+RemoveLast() - O(1)
+AddBefore()/AddAfter() - O(1)
+Random Access - O(n) [not available like deque]
+Count - O(1)
+
+NOTE: For C++ deque random access functionality, use List<T> in C#

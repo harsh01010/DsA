@@ -1,0 +1,127 @@
+/*
+  Unordered set in C#
+  -> Used to store unique elements
+  -> Uses hash table
+  -> Does not maintain any insertion order
+  -> HashSet uses hash table, SortedSet uses red black trees.
+  -> On average: search, insert, delete -> O(1) average.
+  -> An element in HashSet can have a frequency of 0 or 1.
+
+  // FUNCTIONS:
+  Add(), Count, Clear(), Contains(), Remove(), GetEnumerator()
+*/
+
+UNORDERED SET EQUIVALENT IN C#
+
+HashSet<T> is the direct equivalent of unordered_set in C++
+- Stores unique elements without maintaining order
+- Uses Hash Table internally
+- Average O(1) time complexity for operations
+   
+For sorted/ordered sets, use SortedSet<T> (like C++ set with ordering)
+
+Syntax: HashSet<int> set = new HashSet<int>();
+
+Methods and Operations:
+____________________________________________
+Add(element) -> Insert element - O(1) average
+______________________________________________
+
+____________________________________________
+Remove(element) -> Remove element - O(1) average
+___________________________________________
+
+Contains(element) -> Check existence - O(1) average
+
+Count -> Get number of unique elements - O(1)
+
+Clear() -> Remove all - O(n)
+
+UnionWith(other) -> Union of sets - O(n + m)
+
+IntersectWith(other) -> Intersection - O(n)
+
+ExceptWith(other) -> Difference - O(n)
+
+IsSubsetOf(other) -> Check subset - O(n)
+
+IsSupersetOf(other) -> Check superset - O(n)
+
+BIG DIFFERENCES FROM C++ UNORDERED_SET:
+
+1. HashSet doesn't maintain insertion order
+2. No find() method equivalent, use Contains() instead
+3. No count() method (returns 0 or 1), use Contains() for boolean
+4. C++ uses iterators, C# uses foreach
+5. HashSet supports set operations like UnionWith, IntersectWith
+6. No lower_bound() or upper_bound() methods
+
+EXAMPLE:
+
+HashSet<int> set = new HashSet<int>();
+set.Add(10);
+set.Add(5);
+set.Add(15);
+set.Add(20);
+
+Console.WriteLine("Keys:");
+foreach(int x in set)
+    Console.WriteLine(x + " ");
+
+Console.WriteLine("Size: " + set.Count);
+
+// Check if element exists
+int key = 10;
+if(!set.Contains(key))
+    Console.WriteLine("Element not present in hash set");
+else
+    Console.WriteLine("Element present in hash set");
+
+// Remove element
+key = 10;
+if(!set.Contains(key))
+    Console.WriteLine("Cannot remove entered key");
+else
+{
+    set.Remove(key);
+    Console.WriteLine(key + " has been removed from hash set");
+    Console.WriteLine("Size after removing " + key + " is " + set.Count);
+}
+
+// Clear entire set
+set.Clear();
+Console.WriteLine("Size after clearing: " + set.Count);
+
+// Creating from array
+int[] arr = {10, 5, 15, 20};
+HashSet<int> hashSetFromArray = new HashSet<int>(arr);
+
+// Set operations
+HashSet<int> set1 = new HashSet<int> {1, 2, 3, 4};
+HashSet<int> set2 = new HashSet<int> {3, 4, 5, 6};
+
+// Union
+set1.UnionWith(set2);
+// Result: {1, 2, 3, 4, 5, 6}
+
+// Intersection
+HashSet<int> set3 = new HashSet<int> {1, 2, 3, 4};
+HashSet<int> set4 = new HashSet<int> {3, 4, 5, 6};
+set3.IntersectWith(set4);
+// Result: {3, 4}
+
+// Difference
+HashSet<int> set5 = new HashSet<int> {1, 2, 3, 4};
+HashSet<int> set6 = new HashSet<int> {3, 4, 5, 6};
+set5.ExceptWith(set6);
+// Result: {1, 2}
+
+Time Complexity:
+Add() - O(1)
+Remove() - O(1)
+Contains() - O(1)
+Count - O(1)
+Clear() - O(n)
+UnionWith() - O(n + m)
+IntersectWith() - O(n)
+ExceptWith() - O(n)

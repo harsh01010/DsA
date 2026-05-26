@@ -1,0 +1,98 @@
+_____LIST IN C# (Alternate to VECTOR in C++)____
+
+WHAT IS LIST?
+  . List is dynamic array, List is a sequence container
+  . List automatically handles growth and storage internally by the CLR
+  . List provides similar functionality to C++ vector
+  . List allows random access using indexers []
+
+.BASIC
+
+Syntax: List<data_type> name = new List<data_type>();
+
+Ways to create List in C#
+______________________________________________________
+->List<int> list = new List<int>();
+    list.Add(10);
+    list.Add(20);
+    list.Add(30);
+                                                     
+->List<int> list = new List<int> { 10, 20, 30 };
+                                                     
+->List<int> list = new List<int>(10); // capacity of 10
+                                                     
+->List<int> list = new List<int>(anotherList); 
+                                                     
+->int[] arr = { 10, 20, 30 };                        
+    List<int> list = new List<int>(arr);
+                                                     
+->List<int> list = new List<int>();
+    foreach(int x in anotherList)
+        list.Add(x);
+_____________________________________________________|
+
+Modifiers:
+____________________________________________
+Add(element) -> Add the element at the end - O(1) amortized
+______________________________________________
+
+____________________________________________
+RemoveAt(index) / Remove(element) -> Remove element
+___________________________________________
+
+Insert(index, value) -> Insert value at given index - O(n)
+
+Clear() -> Removes all elements from the list
+
+RemoveRange(index, count) -> Remove count elements starting from index - O(n)
+
+Contains(element) -> Check if element exists - O(n)
+
+IndexOf(element) -> Get index of element, returns -1 if not found - O(n)
+
+Count -> Get number of elements - O(1)
+
+Capacity -> Get current capacity - O(1)
+
+______________________________________________________________________________________________________________________________________________________
+
+IMPORTANT DIFFERENCES FROM VECTOR:
+
+1. Vector uses [] and at() both, List uses only [] (indexer)
+2. Vector has .size() method, List uses .Count property
+3. Vector has .capacity(), List has .Capacity property
+4. Vector uses iterators, List uses foreach or indexed loop
+5. Vector push_back(), List uses Add()
+6. Vector pop_back(), List uses RemoveAt(Count-1)
+
+EXAMPLE USAGE:
+
+List<int> myList = new List<int>();
+myList.Add(10);
+myList.Add(20);
+myList.Add(30);
+
+foreach(int x in myList)
+    Console.WriteLine(x);
+
+myList.Insert(1, 15); // Insert 15 at index 1
+
+myList.Remove(20); // Remove first occurrence of 20
+
+myList.RemoveAt(0); // Remove element at index 0
+
+int size = myList.Count;
+
+int element = myList[0];
+
+if(myList.Contains(30))
+    Console.WriteLine("Element found");
+
+myList.Clear();
+
+Time Complexity Summary:
+Add() - O(1) amortized
+Remove()/RemoveAt() - O(n)
+Insert() - O(n)
+Contains()/IndexOf() - O(n)
+Access by index [] - O(1)

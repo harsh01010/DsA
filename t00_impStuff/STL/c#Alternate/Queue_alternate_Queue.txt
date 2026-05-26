@@ -1,0 +1,80 @@
+/*
+   QUEUE IN C#
+
+   First in first out (FIFO)
+
+   Queue operations have O(1) time complexity
+*/
+
+QUEUE STL IN C#
+
+Queue<T> is equivalent to queue in C++
+
+Syntax: Queue<int> queue = new Queue<int>();
+
+Methods and Operations:
+____________________________________________
+Enqueue(element) -> Add element to back - O(1)
+______________________________________________
+
+____________________________________________
+Dequeue() -> Remove and return front element - O(1)
+___________________________________________
+
+Peek() -> View front element without removing - O(1)
+
+Count -> Get number of elements - O(1)
+
+Clear() -> Remove all elements
+
+Contains(element) -> Check if element exists - O(n)
+
+BIG DIFFERENCES FROM C++ QUEUE:
+
+1. In C++, pop() just removes. In C#, Dequeue() returns the element.
+2. C# provides TryDequeue() and TryPeek() for safe operations
+3. C++ queue.front() and queue.back(), C# queue.Peek() shows front only
+4. C++ empty(), C# uses Count == 0
+5. All operations have O(1) time complexity
+6. Queue is implemented using circular array internally
+
+EXAMPLE:
+
+Queue<int> queue = new Queue<int>();
+queue.Enqueue(22);
+queue.Enqueue(33);
+queue.Enqueue(55);
+
+Console.WriteLine(queue.Count);        // 3
+
+int front = queue.Peek();              // View front without removing
+
+int dequeued = queue.Dequeue();        // Returns 22 and removes it
+Console.WriteLine(dequeued);           // 22
+
+// Safe operations
+if(queue.TryDequeue(out int element))
+{
+    Console.WriteLine("Dequeued: " + element);
+}
+
+if(queue.TryPeek(out int frontElement))
+{
+    Console.WriteLine("Front element: " + frontElement);
+}
+
+// Iterate (doesn't remove elements)
+while(queue.Count > 0)
+{
+    Console.WriteLine("Front: " + queue.Peek());
+    Console.WriteLine("Count: " + queue.Count);
+    queue.Dequeue();
+}
+
+Time Complexity:
+Enqueue() - O(1) amortized
+Dequeue() - O(1)
+Peek() - O(1)
+Count - O(1)
+Contains() - O(n)
+Clear() - O(n)

@@ -1,0 +1,83 @@
+/*
+   STACK IN C#
+
+   Last in first out
+
+  Application of stack:
+    - Function calls
+    - Checking for balanced parenthesis
+    - Reversing items
+    - Infix to prefix/postfix
+    - Evaluation of prefix/postfix
+    - Stack span problem and its variations
+    - Undo/redo or forward/backward
+*/
+
+STACK STL IN C#
+
+Stack<T> is equivalent to stack in C++
+
+Syntax: Stack<int> stack = new Stack<int>();
+
+Methods and Operations:
+____________________________________________
+Push(element) -> Add element to stack - O(1)
+______________________________________________
+
+____________________________________________
+Pop() -> Remove and return top element - O(1)
+___________________________________________
+
+Peek() -> View top element without removing - O(1)
+
+Count -> Get number of elements - O(1)
+
+Clear() -> Remove all elements
+
+Contains(element) -> Check if element exists - O(n)
+
+BIG DIFFERENCES FROM C++ STACK:
+1. In C++, pop() just deletes and doesn't return. In C#, Pop() returns the element.
+2. C# provides TryPop() and TryPeek() for safe operations
+3. Stack.Empty() in C++, but Stack<T> uses Count == 0 in C#
+4. All operations have O(1) time complexity
+5. Stack is implemented using dynamic array internally (like deque in C++)
+
+EXAMPLE:
+
+Stack<int> stack = new Stack<int>();
+stack.Push(10);
+stack.Push(20);
+stack.Push(30);
+
+Console.WriteLine(stack.Count);       // 3
+Console.WriteLine(stack.Peek());      // 30
+
+int popped = stack.Pop();              // returns 30 and removes it
+Console.WriteLine(popped);             // 30
+
+if(stack.Count > 0)
+    int top = stack.Peek();
+
+// Safe operations (C# 8.0+)
+if(stack.TryPop(out int element))
+{
+    Console.WriteLine("Popped: " + element);
+}
+
+if(stack.TryPeek(out int topElement))
+{
+    Console.WriteLine("Top: " + topElement);
+}
+
+// Iterate (doesn't remove elements)
+foreach(int x in stack)
+    Console.WriteLine(x);
+
+Time Complexity:
+Push() - O(1) amortized
+Pop() - O(1)
+Peek() - O(1)
+Count - O(1)
+Contains() - O(n)
+Clear() - O(n)

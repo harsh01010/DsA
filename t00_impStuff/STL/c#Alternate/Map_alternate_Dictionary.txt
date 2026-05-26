@@ -1,0 +1,110 @@
+/*
+   MAP IN C# (Using Dictionary and SortedDictionary)
+
+   Dictionary<K, V> - Unordered, key-value pairs
+   SortedDictionary<K, V> - Ordered by keys, key-value pairs
+   
+   Dictionary is like unordered_map in C++
+   SortedDictionary is like map in C++ with Red-Black Trees
+   
+   Dictionary uses Hash Table internally
+   SortedDictionary uses Red-Black Tree internally
+*/
+
+MAP EQUIVALENT IN C#
+
+Dictionary<K, V> is equivalent to unordered_map in C++
+SortedDictionary<K, V> is equivalent to map in C++
+
+Syntax: Dictionary<int, int> dict = new Dictionary<int, int>();
+        SortedDictionary<int, int> dict = new SortedDictionary<int, int>();
+
+Methods and Operations for Dictionary (Unordered):
+____________________________________________
+Add(key, value) -> Insert key-value pair - O(1) average
+______________________________________________
+
+____________________________________________
+dict[key] = value -> Insert or Update - O(1) average
+___________________________________________
+
+Remove(key) -> Remove by key - O(1) average
+
+ContainsKey(key) -> Check key existence - O(1) average
+
+ContainsValue(value) -> Check value existence - O(n)
+
+TryGetValue(key, out value) -> Safe get - O(1) average
+
+Count -> Get number of pairs - O(1)
+
+Clear() -> Remove all - O(n)
+
+Keys -> Get all keys
+
+Values -> Get all values
+
+Methods and Operations for SortedDictionary (Ordered):
+
+All methods same as Dictionary but with O(log n) complexity instead of O(1)
+
+BIG DIFFERENCES FROM C++ MAP:
+
+1. Dictionary is unordered (use for unordered_map)
+2. SortedDictionary maintains order by keys (use for map)
+3. dict[key] auto-inserts if key not found (different from C++ at())
+4. At() doesn't exist in C#, use TryGetValue() for safe access
+5. count() doesn't exist, use ContainsKey()
+6. C++ uses iterators, C# uses foreach
+7. Elements ordered ascending by default in SortedDictionary
+
+EXAMPLE:
+
+// Dictionary (unordered)
+Dictionary<int, int> dict = new Dictionary<int, int>();
+dict.Add(10, 20);
+dict[5] = 10;
+dict[5] = 50; // Update value for key 5
+
+foreach(var kvp in dict)
+    Console.WriteLine(kvp.Key + ":" + kvp.Value);
+
+// SortedDictionary (ordered)
+SortedDictionary<int, int> sortedDict = new SortedDictionary<int, int>();
+sortedDict.Add(10, 20);
+sortedDict[5] = 10;
+sortedDict[5] = 50;
+
+foreach(var kvp in sortedDict)
+    Console.WriteLine(kvp.Key + ":" + kvp.Value); // Ordered by key
+
+// Safe access
+if(sortedDict.TryGetValue(5, out int value))
+    Console.WriteLine("Value: " + value);
+
+// Check if key exists
+if(sortedDict.ContainsKey(30))
+    sortedDict[30] = 100;
+
+// Get keys and values
+var keys = sortedDict.Keys;
+var values = sortedDict.Values;
+
+// Remove
+sortedDict.Remove(5);
+
+// Clear
+sortedDict.Clear();
+
+Time Complexity:
+Dictionary:
+  Add() - O(1)
+  Remove() - O(1)
+  ContainsKey() - O(1)
+  TryGetValue() - O(1)
+
+SortedDictionary:
+  Add() - O(log n)
+  Remove() - O(log n)
+  ContainsKey() - O(log n)
+  TryGetValue() - O(log n)

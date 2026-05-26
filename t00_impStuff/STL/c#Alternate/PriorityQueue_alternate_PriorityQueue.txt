@@ -1,0 +1,117 @@
+/*
+priority_queue in C#
+
+PriorityQueue<T, TPriority> can be used to implement Heaps (.NET 6+)
+
+This container is a min-heap by default (lower priority values first)
+In C++, priority_queue is max-heap by default
+   
+For implementing Max Heap:
+priority_queue< type_of_data, vector<type>, greater<type> >
+In C#: Use negative priorities or custom comparers
+
+For implementing Min Heap:
+priority_queue< type_of_data >
+In C#: Use positive priorities or custom comparers
+
+Methods:
+empty() -> Check if queue is empty, use Count == 0
+size() -> Get size, use Count property
+top() -> View top element, use Peek() 
+push() -> Add element, use Enqueue()
+pop() -> Remove top element, use Dequeue()
+
+Enqueue(element, priority) -> Add with priority - O(log n)
+Dequeue() -> Remove and return highest priority - O(log n)
+Peek() -> View highest priority element - O(1)
+Count -> Get number of elements - O(1)
+TryDequeue() -> Safe dequeue - O(log n)
+TryPeek() -> Safe peek - O(1)
+
+NOTE: PriorityQueue<T, TPriority> requires .NET 6.0+
+For older .NET versions, use custom implementation or SortedDictionary
+
+BIG DIFFERENCES FROM C++ PRIORITY_QUEUE:
+
+1. C++ priority_queue is max-heap by default
+2. C# PriorityQueue is min-heap by default
+3. In C++, use greater<type>() for min-heap
+4. In C#, use negative values or custom comparers for max-heap
+5. C++ top() just returns, C# Dequeue() removes and returns
+6. C# provides TryDequeue() and TryPeek() for safe operations
+
+APPLICATION OF PRIORITY QUEUE:
+- Dijkstra algorithm
+- Prim algorithm
+- Huffman algorithm
+- Heap sort
+- Any place where heap is used
+
+EXAMPLE (for .NET 6+):
+
+using System.Collections.Generic;
+
+// Max Heap simulation (using negative priorities)
+PriorityQueue<int, int> maxHeap = new PriorityQueue<int, int>();
+int[] arr = {44, 23, 1, 55, 8, 4, 9, 0};
+
+foreach(int num in arr)
+{
+    maxHeap.Enqueue(num, -num); // Negative for max-heap
+}
+
+Console.WriteLine("Size: " + maxHeap.Count);
+Console.WriteLine("Using max heap:");
+
+while(maxHeap.Count > 0)
+{
+    Console.Write(maxHeap.Dequeue() + " ");
+}
+
+// Min Heap
+PriorityQueue<int, int> minHeap = new PriorityQueue<int, int>();
+
+foreach(int num in arr)
+{
+    minHeap.Enqueue(num, num); // Natural min-heap
+}
+
+Console.WriteLine("Using min heap:");
+
+while(minHeap.Count > 0)
+{
+    Console.Write(minHeap.Dequeue() + " ");
+}
+
+// With custom priority
+PriorityQueue<string, int> taskQueue = new PriorityQueue<string, int>();
+taskQueue.Enqueue("Task1", 3);
+taskQueue.Enqueue("Task2", 1);
+taskQueue.Enqueue("Task3", 2);
+
+Console.WriteLine("Tasks by priority:");
+while(taskQueue.Count > 0)
+{
+    Console.WriteLine(taskQueue.Dequeue());
+}
+
+// Peek operation
+taskQueue.Enqueue("Urgent", 0);
+taskQueue.Enqueue("Normal", 5);
+
+if(taskQueue.TryPeek(out var task, out var priority))
+{
+    Console.WriteLine("Top task: " + task + " with priority: " + priority);
+}
+
+Time Complexity:
+Enqueue() - O(log n)
+Dequeue() - O(log n)
+Peek() - O(1)
+Count - O(1)
+TryDequeue() - O(log n)
+TryPeek() - O(1)
+
+FOR OLDER .NET VERSIONS:
+Use custom PriorityQueue implementation with SortedDictionary or List
+Or implement heap data structure manually

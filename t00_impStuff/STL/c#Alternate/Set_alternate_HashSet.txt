@@ -1,0 +1,124 @@
+/*
+   SET IN C# (Using HashSet and SortedSet)
+
+   HashSet<T> - Unordered, unique elements
+   SortedSet<T> - Ordered (sorted), unique elements
+   
+   C# Set functionality is provided by:
+   - HashSet<T> (like unordered_set in C++)
+   - SortedSet<T> (like set in C++ with ordered elements)
+   
+   HashSet uses Hash Table for storage
+   SortedSet uses Red-Black Tree for storage
+*/
+
+SET EQUIVALENT IN C#
+
+HashSet<T> is equivalent to unordered_set in C++
+SortedSet<T> is equivalent to set in C++
+
+Syntax: HashSet<int> set = new HashSet<int>();
+        SortedSet<int> set = new SortedSet<int>();
+
+Methods and Operations for HashSet:
+____________________________________________
+Add(element) -> Insert element - O(1) average
+______________________________________________
+
+____________________________________________
+Remove(element) -> Remove element - O(1) average
+___________________________________________
+
+Contains(element) -> Check if element exists - O(1) average
+
+Count -> Get number of unique elements - O(1)
+
+Clear() -> Remove all elements
+
+begin()/end() - Use foreach loop or GetEnumerator()
+
+rbegin()/rend() - Use reverse using LINQ
+
+Time Complexity for HashSet (average):
+Add() - O(1)
+Remove() - O(1)
+Contains() - O(1)
+
+Methods and Operations for SortedSet:
+____________________________________________
+Add(element) -> Insert element - O(log n)
+______________________________________________
+
+____________________________________________
+Remove(element) -> Remove element - O(log n)
+___________________________________________
+
+Contains(element) -> Check if element exists - O(log n)
+
+Min -> Get minimum element - O(1)
+
+Max -> Get maximum element - O(1)
+
+Count -> Get number of elements - O(1)
+
+Reverse -> Get reversed enumeration
+
+GetViewBetween(min, max) -> Get range view - O(log n)
+
+BIG DIFFERENCES FROM C++ SET:
+
+1. C++ set maintains ascending order, SortedSet in C# does too
+2. HashSet is unordered (unlike C++ set)
+3. Set ignores duplicates in both
+4. C++ uses iterators, C# uses foreach
+5. No find() method, use Contains() instead
+6. No count() method (returns 0 or 1), use Contains() for boolean
+
+EXAMPLE:
+
+// HashSet (unordered)
+HashSet<int> hashSet = new HashSet<int>();
+hashSet.Add(10);
+hashSet.Add(5);
+hashSet.Add(20);
+
+foreach(int x in hashSet)
+    Console.WriteLine(x); // Order not guaranteed
+
+// SortedSet (ordered)
+SortedSet<int> set = new SortedSet<int>();
+set.Add(2);
+set.Add(12);
+set.Add(99);
+set.Add(0);
+
+foreach(int x in set)
+    Console.WriteLine(x); // Prints: 0, 2, 12, 99 (ascending)
+
+// Reverse iteration in SortedSet
+foreach(int x in set.Reverse)
+    Console.WriteLine(x); // Descending order
+
+if(set.Contains(10))
+    Console.WriteLine("Found");
+
+set.Clear();
+int size = set.Count; // 0
+
+// Remove element
+set.Remove(0);
+
+// Range operations
+var viewRange = set.GetViewBetween(10, 50);
+
+Time Complexity:
+HashSet:
+  Add() - O(1)
+  Remove() - O(1)
+  Contains() - O(1)
+
+SortedSet:
+  Add() - O(log n)
+  Remove() - O(log n)
+  Contains() - O(log n)
+  Min/Max - O(1)

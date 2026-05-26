@@ -1,0 +1,113 @@
+/*
+ Unordered map in C#:
+ ->used to store key value pairs
+ ->used hashing
+ ->no order of pairs
+ -> Dictionary uses hashtable, SortedDictionary uses red black trees.
+ */
+
+UNORDERED MAP EQUIVALENT IN C#
+
+Dictionary<K, V> is the direct equivalent of unordered_map in C++
+- Stores key-value pairs without maintaining order
+- Uses Hash Table internally
+- Average O(1) time complexity for operations
+   
+For truly sorted/ordered maps, use SortedDictionary<K, V> (like C++ map)
+
+Syntax: Dictionary<string, int> udict = new Dictionary<string, int>();
+
+Methods and Operations:
+____________________________________________
+dict[key] = value -> Insert/Update - O(1) average
+______________________________________________
+
+____________________________________________
+Add(key, value) -> Insert (throws if exists) - O(1) average
+___________________________________________
+
+Remove(key) -> Remove by key - O(1) average
+
+ContainsKey(key) -> Check key existence - O(1) average
+
+ContainsValue(value) -> Check value existence - O(n)
+
+TryGetValue(key, out value) -> Safe get - O(1) average
+
+TryRemove(key, out value) -> Safe remove - O(1) average (Dictionary removed from .NET)
+
+Count -> Get number of pairs - O(1)
+
+Clear() -> Remove all - O(n)
+
+Keys -> Get all keys
+
+Values -> Get all values
+
+BIG DIFFERENCES FROM C++ UNORDERED_MAP:
+
+1. Dictionary doesn't maintain insertion order
+2. [] operator auto-inserts if key not found
+3. No find() method, use ContainsKey() instead
+4. No count() method (use ContainsKey() for boolean)
+5. C++ uses iterators, C# uses foreach
+6. TryGetValue() for safe access without auto-insert
+
+EXAMPLE:
+
+Dictionary<string, int> umap = new Dictionary<string, int>();
+
+umap["key 1"] = 4;   // Auto-inserts if not present
+umap["key 2"] = 7;
+umap["key 3"] = 4;
+
+Console.WriteLine("Size: " + umap.Count);
+
+foreach(var item in umap)
+    Console.WriteLine(item.Key + " " + item.Value);
+
+umap.Add("hello", 232);
+Console.WriteLine("After insertion:");
+
+foreach(var item in umap)
+    Console.WriteLine(item.Key + " " + item.Value);
+
+// Check if key exists
+if(umap.ContainsKey("hello"))
+    Console.WriteLine("found");
+else
+    Console.WriteLine("not found");
+
+// Remove element
+umap.Remove("hello");
+Console.WriteLine("Size after removal: " + umap.Count);
+
+// Clear all
+umap.Clear();
+Console.WriteLine("Size after clear: " + umap.Count);
+
+// Example: Counting frequency of array elements
+int[] arr = {2, 3, 5, 3, 4, 2, 5, 6, 3, 5, 56, 3, 3};
+
+Dictionary<int, int> cnt = new Dictionary<int, int>();
+foreach(int num in arr)
+{
+    if(cnt.ContainsKey(num))
+        cnt[num]++;
+    else
+        cnt[num] = 1;
+}
+
+foreach(var x in cnt)
+    Console.WriteLine(x.Key + " " + x.Value);
+
+Console.WriteLine("Total distinct elements: " + cnt.Count);
+
+Time Complexity:
+Add()/Insert - O(1)
+Remove() - O(1)
+ContainsKey() - O(1)
+TryGetValue() - O(1)
+ContainsValue() - O(n)
+Count - O(1)
+Clear() - O(n)
